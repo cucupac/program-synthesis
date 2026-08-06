@@ -1,0 +1,31 @@
+{
+  "config": "experiment/data/problem_sets/generator_v1/generator.yaml",
+  "world_count": 25,
+  "world_files": [
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6460__reversed_a0.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6460__reversed_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6460__reversed_a1.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6460__permuted_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6460__stale_reversed.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6461__reversed_a0.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6461__reversed_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6461__reversed_a1.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6461__permuted_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6461__stale_reversed.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6462__reversed_a0.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6462__reversed_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6462__reversed_a1.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6462__permuted_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6462__stale_reversed.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6463__reversed_a0.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6463__reversed_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6463__reversed_a1.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6463__permuted_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6463__stale_reversed.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6464__reversed_a0.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6464__reversed_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6464__reversed_a1.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6464__permuted_a05.json",
+    "experiment/data/problem_sets/generator_v1/worlds/seed_6464__stale_reversed.json"
+  ]
+}

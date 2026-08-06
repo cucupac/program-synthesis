@@ -1,0 +1,91 @@
+{
+  "analysis_status": "raw_data_only",
+  "arms": {
+    "best_k_from_c_oracle": "test-peeking best K from C diagnostic",
+    "compression_on_all_100_starter": "compression score on all primitive-solved starter solutions",
+    "compression_on_matched_25_starter": "compression score on matched 25 starter tasks",
+    "compression_on_validation_assisted": "compression score on assisted validation solutions",
+    "compression_on_validation_skip": "compression score on primitive-solved validation solutions only",
+    "hidden_motif_oracle": "hidden motif diagnostic oracle",
+    "most_frequent_k": "top K by starter-task support",
+    "primitives_only": "primitive solver baseline",
+    "random_k": "20 deterministic random K draws from C",
+    "utility_on_matched_25_starter": "utility score on matched 25 starter tasks",
+    "utility_on_validation": "utility score on validation targets"
+  },
+  "assisted_validation_solve_config": {
+    "max_program_size": 7,
+    "max_solutions": 1,
+    "node_budget": 90000
+  },
+  "break_even_policy": {
+    "comparison": "utility_on_validation vs compression_on_validation_assisted",
+    "negative_increment": "floor at zero",
+    "upfront_cost": "utility selection cost minus assisted-compression selection cost"
+  },
+  "cell_count": 540,
+  "conditions": [
+    "reversed_a0",
+    "reversed_a05",
+    "reversed_a1",
+    "permuted_a0",
+    "permuted_a05",
+    "permuted_a1"
+  ],
+  "experiment_name": "full_selection_experiment_k_sweep",
+  "k_sensitivity_status": "registered_raw_data_generation",
+  "k_values": [
+    2,
+    5,
+    10
+  ],
+  "matched_25_rule": "random.Random(f'cell25:{seed}') over starter tasks",
+  "menu_recipe": "frontier_promotion",
+  "primary_data_effect": "compression_on_validation_assisted - compression_on_matched_25_starter",
+  "primary_metric": "solved_count_delta",
+  "primary_scoring_effect": "utility_on_validation - compression_on_validation_assisted",
+  "random_draws": 20,
+  "robustness_data_effect": "compression_on_validation_skip - compression_on_matched_25_starter",
+  "secondary_metric": "mean_search_cost_savings",
+  "seeds": [
+    6511,
+    6512,
+    6513,
+    6514,
+    6515,
+    6516,
+    6517,
+    6518,
+    6519,
+    6520,
+    6521,
+    6522,
+    6523,
+    6524,
+    6525,
+    6526,
+    6527,
+    6528,
+    6529,
+    6530,
+    6531,
+    6532,
+    6533,
+    6534,
+    6535,
+    6536,
+    6537,
+    6538,
+    6539,
+    6540
+  ],
+  "selection_cost_policy": {
+    "compression_segmentation_work": "report separately; exclude from candidate-program totals",
+    "starter_solution_search": "treated as pre-existing and not charged",
+    "unit": "candidate programs tried",
+    "validation_assisted_solution_search": "charge assisted search only",
+    "validation_skip_solution_search": "charge skip search only"
+  },
+  "stale_reversed": "excluded from the registered K sweep",
+  "validation_task_count": 25
+}

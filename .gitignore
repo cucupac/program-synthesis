@@ -1,0 +1,23 @@
+.DS_Store
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Generated figures
+experiment/results/
+
+# Rebuilt from tracked cell-level data
+experiment/data/selection/capacity_curve/full_selection_experiment_capacity_curve.json
+experiment/data/selection/budget_intervention/full_selection_experiment_budget_intervention.json
+
+# Local smoke runs
+experiment/data/selection/*_smoke/
+experiment/data/selection/*_smoke.json

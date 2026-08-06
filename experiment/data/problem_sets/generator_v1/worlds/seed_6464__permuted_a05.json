@@ -1,0 +1,3954 @@
+{
+  "condition": {
+    "alpha_test": 0.5,
+    "alpha_val": 0.5,
+    "alt_kind": "permuted",
+    "name": "permuted_a05"
+  },
+  "distributions": {
+    "p_alt": [
+      0.1070589060488222,
+      0.04765770231161033,
+      0.06815099694895077,
+      0.11147222543849626,
+      0.1012545166105311,
+      0.09623389232923317,
+      0.11591065301554039,
+      0.045520015878679994,
+      0.11637462107784657,
+      0.049065940680678155,
+      0.058198470163481425,
+      0.08310205949612968
+    ],
+    "p_start": [
+      0.11637462107784657,
+      0.11591065301554039,
+      0.11147222543849626,
+      0.1070589060488222,
+      0.1012545166105311,
+      0.09623389232923317,
+      0.08310205949612968,
+      0.06815099694895077,
+      0.058198470163481425,
+      0.049065940680678155,
+      0.04765770231161033,
+      0.045520015878679994
+    ],
+    "p_test": [
+      0.11171676356333439,
+      0.08178417766357536,
+      0.08981161119372352,
+      0.10926556574365923,
+      0.1012545166105311,
+      0.09623389232923317,
+      0.09950635625583504,
+      0.05683550641381538,
+      0.087286545620664,
+      0.049065940680678155,
+      0.05292808623754588,
+      0.06431103768740484
+    ],
+    "p_val": [
+      0.11171676356333439,
+      0.08178417766357536,
+      0.08981161119372352,
+      0.10926556574365923,
+      0.1012545166105311,
+      0.09623389232923317,
+      0.09950635625583504,
+      0.05683550641381538,
+      0.087286545620664,
+      0.049065940680678155,
+      0.05292808623754588,
+      0.06431103768740484
+    ]
+  },
+  "metadata": {
+    "config_summary": {
+      "motif_count": 12,
+      "n_start": 100,
+      "n_test": 100,
+      "n_val": 25
+    },
+    "density_summary": {
+      "start": {
+        "max": 85,
+        "mean": 34.83,
+        "min": 3
+      },
+      "test": {
+        "max": 84,
+        "mean": 37.6,
+        "min": 3
+      },
+      "val": {
+        "max": 85,
+        "mean": 51.96,
+        "min": 9
+      }
+    },
+    "expected_motif_length": {
+      "p_start": 3.0127221047757073,
+      "p_test": 2.962037887844408,
+      "p_val": 2.962037887844408
+    },
+    "glue_usage": {
+      "start": {
+        "invert": 19,
+        "reflect_diag": 25,
+        "reflect_horizontal": 26,
+        "reflect_vertical": 29
+      },
+      "test": {
+        "invert": 23,
+        "reflect_diag": 19,
+        "reflect_horizontal": 23,
+        "reflect_vertical": 34
+      },
+      "val": {
+        "invert": 9,
+        "reflect_diag": 5,
+        "reflect_horizontal": 4,
+        "reflect_vertical": 6
+      }
+    },
+    "realized_rho": {
+      "realized_start_test": 0.357396581765086,
+      "realized_start_val": 0.2420174040009971,
+      "realized_val_test": 0.8214757238119013
+    },
+    "rejection_counts": {
+      "start": {
+        "duplicate": 21,
+        "no_op_glue": 16,
+        "too_dense": 15,
+        "too_sparse": 20
+      },
+      "test": {
+        "duplicate": 48,
+        "no_op_glue": 15,
+        "primitive_equal": 1,
+        "too_dense": 23,
+        "too_sparse": 26
+      },
+      "val": {
+        "duplicate": 13,
+        "too_dense": 5,
+        "too_sparse": 7
+      }
+    }
+  },
+  "motifs": [
+    {
+      "id": "M00",
+      "program": "add(invert(triangle),line_horizontal)",
+      "target": ".#########\n..########\n...#######\n....######\n.....#####\n##########\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "id": "M01",
+      "program": "subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))",
+      "target": "..........\n..........\n..........\n..........\n..........\n####.#####\n..........\n..........\n..........\n.........."
+    },
+    {
+      "id": "M02",
+      "program": "reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n#####.....\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "id": "M03",
+      "program": "add(invert(square),line_horizontal)",
+      "target": "..........\n.########.\n.########.\n.########.\n.########.\n##########\n.########.\n.########.\n.########.\n.........."
+    },
+    {
+      "id": "M04",
+      "program": "subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n....#.....\n....#.....\n....#.....\n....#.....\n....#.....\n.........."
+    },
+    {
+      "id": "M05",
+      "program": "reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n....##....\n....##....\n...#..#...\n..#....#..\n.#......#.\n#........#"
+    },
+    {
+      "id": "M06",
+      "program": "reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....#.....\n..........\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "id": "M07",
+      "program": "subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n..........\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "id": "M08",
+      "program": "reflect_horizontal(reflect_vertical(triangle))",
+      "target": "##########\n.#########\n..########\n...#######\n....######\n.....#####\n......####\n.......###\n........##\n.........#"
+    },
+    {
+      "id": "M09",
+      "program": "subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))",
+      "target": "..........\n.#........\n..#.......\n...#......\n....#.....\n.....#....\n......#...\n.......#..\n........#.\n.........."
+    },
+    {
+      "id": "M10",
+      "program": "subtract(add(reflect_vertical(diagonal),triangle),square)",
+      "target": "..........\n.#......#.\n.##....#..\n.###..#...\n.#####....\n.#####....\n.######...\n.#######..\n.########.\n.........."
+    },
+    {
+      "id": "M11",
+      "program": "subtract(reflect_diag(line_vertical),diagonal)",
+      "target": "..........\n..........\n..........\n..........\n..........\n#####.####\n..........\n..........\n..........\n.........."
+    }
+  ],
+  "tasks_start": [
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))",
+      "id": "start_000",
+      "motif_ids": [
+        "M02",
+        "M01"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n....#.....\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "start_001",
+      "motif_ids": [
+        "M02",
+        "M06",
+        "M10"
+      ],
+      "split": "start",
+      "target": "##########\n#.........\n##........\n###.......\n####......\n####......\n###.......\n##........\n#.........\n#........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(subtract(add(invert(square),line_horizontal),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "start_002",
+      "motif_ids": [
+        "M03",
+        "M01"
+      ],
+      "split": "start",
+      "target": "##########\n#........#\n#........#\n#........#\n#........#\n#####.####\n#........#\n#........#\n#........#\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(add(invert(triangle),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "start_003",
+      "motif_ids": [
+        "M00",
+        "M04",
+        "M07"
+      ],
+      "split": "start",
+      "target": "##########\n##########\n##########\n##########\n##########\n##########\n#####..###\n###.#...##\n##..#....#\n#........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(reflect_vertical(triangle))))",
+      "id": "start_004",
+      "motif_ids": [
+        "M01",
+        "M08"
+      ],
+      "split": "start",
+      "target": "#....#....\n##...#....\n###..#....\n####.#....\n#####.....\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(overlap(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),add(invert(square),line_horizontal))))",
+      "id": "start_005",
+      "motif_ids": [
+        "M05",
+        "M04",
+        "M03"
+      ],
+      "split": "start",
+      "target": "..........\n.#...#..#.\n..#..#.#..\n...#.##...\n....##....\n....##....\n...#.##...\n..#..#.#..\n.#...#..#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "start_006",
+      "motif_ids": [
+        "M02",
+        "M04"
+      ],
+      "split": "start",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n....#.....\n....#.....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(add(add(invert(triangle),line_horizontal),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_007",
+      "motif_ids": [
+        "M00",
+        "M09",
+        "M04"
+      ],
+      "split": "start",
+      "target": ".....#....\n##...#....\n###..#....\n####.#....\n#########.\n######....\n#######...\n########..\n#########.\n#########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))))",
+      "id": "start_008",
+      "motif_ids": [
+        "M01",
+        "M04"
+      ],
+      "split": "start",
+      "target": "..........\n.....#....\n.....#....\n.....#....\n##########\n.....#....\n.....#....\n.....#....\n.....#....\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(overlap(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "start_009",
+      "motif_ids": [
+        "M05",
+        "M09",
+        "M02"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n######....\n####..#...\n###....#..\n##......#.\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(add(invert(square),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_010",
+      "motif_ids": [
+        "M03",
+        "M04"
+      ],
+      "split": "start",
+      "target": "..........\n.###.####.\n.###.####.\n.###.####.\n####.#####\n.###.####.\n.###.####.\n.###.####.\n.###.####.\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(add(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),add(invert(square),line_horizontal))))",
+      "id": "start_011",
+      "motif_ids": [
+        "M02",
+        "M01",
+        "M03"
+      ],
+      "split": "start",
+      "target": "##########\n#........#\n#........#\n#........#\n#........#\n..........\n#........#\n#........#\n#........#\n##########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "start_012",
+      "motif_ids": [
+        "M07",
+        "M05"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n....##....\n####..#...\n###....#..\n##......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),add(invert(triangle),line_horizontal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_013",
+      "motif_ids": [
+        "M06",
+        "M00",
+        "M01"
+      ],
+      "split": "start",
+      "target": "#....#....\n##...#....\n###..#....\n####.#....\n######....\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(overlap(add(invert(triangle),line_horizontal),add(invert(square),line_horizontal))))",
+      "id": "start_014",
+      "motif_ids": [
+        "M00",
+        "M03"
+      ],
+      "split": "start",
+      "target": "##########\n##########\n########.#\n#######..#\n..........\n#####....#\n####.....#\n###......#\n##.......#\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))",
+      "id": "start_015",
+      "motif_ids": [
+        "M06",
+        "M05",
+        "M01"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n....##....\n##########\n...#..#...\n..#....#..\n.#......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))))",
+      "id": "start_016",
+      "motif_ids": [
+        "M01",
+        "M02"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n.....#####\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(add(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_diag(line_vertical),diagonal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))))",
+      "id": "start_017",
+      "motif_ids": [
+        "M05",
+        "M11",
+        "M04"
+      ],
+      "split": "start",
+      "target": ".########.\n#.###.##.#\n##.##.#.##\n###.#..###\n####..####\n..........\n###.#..###\n##.##.#.##\n#.###.##.#\n.########."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)))",
+      "id": "start_018",
+      "motif_ids": [
+        "M06",
+        "M09"
+      ],
+      "split": "start",
+      "target": "..........\n.#........\n..#.......\n...#......\n....#.....\n..........\n......#...\n.......#..\n........#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(overlap(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),add(invert(square),line_horizontal)))",
+      "id": "start_019",
+      "motif_ids": [
+        "M01",
+        "M02",
+        "M03"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n......####\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(subtract(add(invert(square),line_horizontal),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "start_020",
+      "motif_ids": [
+        "M03",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n.########.\n.########.\n.########.\n.....#....\n.########.\n.########.\n.########.\n.########.\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(overlap(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "start_021",
+      "motif_ids": [
+        "M06",
+        "M09",
+        "M02"
+      ],
+      "split": "start",
+      "target": "..........\n.#........\n..#.......\n...#......\n....#.....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(overlap(add(invert(square),line_horizontal),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "start_022",
+      "motif_ids": [
+        "M03",
+        "M10"
+      ],
+      "split": "start",
+      "target": "##########\n#.######.#\n#..####.##\n#...##.###\n#.....####\n#.....####\n#......###\n#.......##\n#........#\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_diag(overlap(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "start_023",
+      "motif_ids": [
+        "M02",
+        "M07",
+        "M08"
+      ],
+      "split": "start",
+      "target": ".#########\n..########\n...#######\n....######\n.....#####\n.....#####\n....######\n...#######\n..########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(triangle),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "start_024",
+      "motif_ids": [
+        "M00",
+        "M04"
+      ],
+      "split": "start",
+      "target": ".#########\n..##.#####\n...#.#####\n.....#####\n.....#####\n####.#####\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_025",
+      "motif_ids": [
+        "M07",
+        "M05",
+        "M01"
+      ],
+      "split": "start",
+      "target": "#####.####\n#####.###.\n#####.##..\n#####.#...\n######....\n#####.....\n####..#...\n###....#..\n##......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(overlap(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),add(invert(square),line_horizontal))))",
+      "id": "start_026",
+      "motif_ids": [
+        "M01",
+        "M03"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n#####.####\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "start_027",
+      "motif_ids": [
+        "M05",
+        "M04",
+        "M02"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n.....#....\n..........\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_028",
+      "motif_ids": [
+        "M02",
+        "M04"
+      ],
+      "split": "start",
+      "target": "..........\n.....#....\n.....#....\n.....#....\n.....#....\n.....#....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_diag(add(subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))))",
+      "id": "start_029",
+      "motif_ids": [
+        "M07",
+        "M09",
+        "M04"
+      ],
+      "split": "start",
+      "target": ".....#....\n.#...#...#\n..#..#..##\n...#.#.###\n.........#\n.....#####\n....######\n...#######\n..########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "start_030",
+      "motif_ids": [
+        "M04",
+        "M05"
+      ],
+      "split": "start",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n..........\n..........\n....#.....\n....#.....\n....#.....\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(overlap(add(subtract(add(reflect_vertical(diagonal),triangle),square),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_031",
+      "motif_ids": [
+        "M10",
+        "M05",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n.....#....\n.....#....\n.....#....\n..........\n.....#....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "start_032",
+      "motif_ids": [
+        "M05",
+        "M02"
+      ],
+      "split": "start",
+      "target": ".########.\n..######.#\n...####.##\n....##.###\n......####\n......####\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),subtract(reflect_diag(line_vertical),diagonal))",
+      "id": "start_033",
+      "motif_ids": [
+        "M05",
+        "M01",
+        "M11"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n....##....\n.....#....\n...#..#...\n..#....#..\n.#......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(subtract(add(invert(triangle),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_034",
+      "motif_ids": [
+        "M00",
+        "M04"
+      ],
+      "split": "start",
+      "target": "#.........\n##..#.....\n###.#.....\n#####.....\n#####.....\n....#.....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(overlap(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))))",
+      "id": "start_035",
+      "motif_ids": [
+        "M06",
+        "M04",
+        "M07"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n.....#....\n.....##...\n.....#.#..\n.....#..#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "start_036",
+      "motif_ids": [
+        "M10",
+        "M07"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n.#####....\n#######...\n########..\n#########.\n#........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(subtract(add(add(invert(triangle),line_horizontal),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "start_037",
+      "motif_ids": [
+        "M00",
+        "M06",
+        "M05"
+      ],
+      "split": "start",
+      "target": ".########.\n#.######..\n##.####...\n###.##....\n####......\n####..####\n###.......\n##........\n#.........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(add(add(invert(square),line_horizontal),subtract(add(reflect_vertical(diagonal),triangle),square))))",
+      "id": "start_038",
+      "motif_ids": [
+        "M03",
+        "M10"
+      ],
+      "split": "start",
+      "target": "##########\n#........#\n#........#\n#........#\n..........\n#........#\n#........#\n#........#\n#........#\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))",
+      "id": "start_039",
+      "motif_ids": [
+        "M04",
+        "M01",
+        "M06"
+      ],
+      "split": "start",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n..........\n....#.....\n....#.....\n....#.....\n....#.....\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(subtract(reflect_diag(line_vertical),diagonal),add(invert(triangle),line_horizontal)))",
+      "id": "start_040",
+      "motif_ids": [
+        "M11",
+        "M00"
+      ],
+      "split": "start",
+      "target": "#.........\n##........\n###.......\n####......\n#####.....\n..........\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(subtract(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(triangle),line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))))",
+      "id": "start_041",
+      "motif_ids": [
+        "M02",
+        "M00",
+        "M06"
+      ],
+      "split": "start",
+      "target": "....#.....\n....#....#\n....#...##\n....#..###\n....#.####\n.....#####\n......####\n.......###\n........##\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(add(reflect_vertical(diagonal),triangle),square))",
+      "id": "start_042",
+      "motif_ids": [
+        "M05",
+        "M10"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n.##....#..\n.###..#...\n.#####....\n.#####....\n.######...\n.#######..\n.########.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "start_043",
+      "motif_ids": [
+        "M01",
+        "M09",
+        "M05"
+      ],
+      "split": "start",
+      "target": ".########.\n#.######.#\n##.####.##\n###.##.###\n####..####\n..........\n###.##.###\n##.####.##\n#.######.#\n.########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "start_044",
+      "motif_ids": [
+        "M01",
+        "M02"
+      ],
+      "split": "start",
+      "target": "##########\n.#########\n..########\n...#######\n....######\n....######\n....#.####\n....#..###\n....#...##\n....#....#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_horizontal(reflect_vertical(triangle))),add(invert(square),line_horizontal))",
+      "id": "start_045",
+      "motif_ids": [
+        "M05",
+        "M08",
+        "M03"
+      ],
+      "split": "start",
+      "target": "##########\n.#########\n.#########\n.#########\n.#########\n##########\n.#########\n.#########\n.#########\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(triangle),line_horizontal)))",
+      "id": "start_046",
+      "motif_ids": [
+        "M02",
+        "M00"
+      ],
+      "split": "start",
+      "target": "#.........\n##.......#\n###.....##\n####...###\n##########\n##########\n##########\n##########\n##########\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_horizontal(add(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))))",
+      "id": "start_047",
+      "motif_ids": [
+        "M02",
+        "M04",
+        "M05"
+      ],
+      "split": "start",
+      "target": ".########.\n..##.###.#\n...#.##.##\n.....#.###\n......####\n......####\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))",
+      "id": "start_048",
+      "motif_ids": [
+        "M10",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n.#......#.\n.##....#..\n.###..#...\n.#####....\n....#.....\n.######...\n.#######..\n.########.\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(overlap(overlap(add(invert(triangle),line_horizontal),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_049",
+      "motif_ids": [
+        "M00",
+        "M02",
+        "M04"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n.###.#....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_diag(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "start_050",
+      "motif_ids": [
+        "M02",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n......####\n....#.####\n...##.####\n..###.####\n.####.####"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(reflect_horizontal(reflect_vertical(triangle)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "start_051",
+      "motif_ids": [
+        "M08",
+        "M02",
+        "M05"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n.....#....\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))))",
+      "id": "start_052",
+      "motif_ids": [
+        "M05",
+        "M02"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n....##....\n.....#....\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(overlap(subtract(add(invert(square),line_horizontal),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "start_053",
+      "motif_ids": [
+        "M03",
+        "M09",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n####..####\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(triangle),line_horizontal))",
+      "id": "start_054",
+      "motif_ids": [
+        "M02",
+        "M00"
+      ],
+      "split": "start",
+      "target": ".#########\n..#######.\n...#####..\n....###...\n.....#....\n#####.....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(overlap(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "start_055",
+      "motif_ids": [
+        "M07",
+        "M02",
+        "M05"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n....##....\n..........\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(subtract(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),subtract(add(reflect_vertical(diagonal),triangle),square))))",
+      "id": "start_056",
+      "motif_ids": [
+        "M04",
+        "M10"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n..........\n.....#....\n.....#....\n.....#....\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(add(invert(triangle),line_horizontal),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "start_057",
+      "motif_ids": [
+        "M00",
+        "M06",
+        "M05"
+      ],
+      "split": "start",
+      "target": ".........#\n........#.\n.......#..\n......#...\n.....#....\n....##....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_058",
+      "motif_ids": [
+        "M05",
+        "M01"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......#.\n..#....#..\n...#..#...\n....#.....\n....##....\n...#..#...\n..#....#..\n.#......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(add(overlap(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),subtract(reflect_diag(line_vertical),diagonal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))))",
+      "id": "start_059",
+      "motif_ids": [
+        "M04",
+        "M11",
+        "M06"
+      ],
+      "split": "start",
+      "target": ".........#\n........#.\n.......#..\n......#...\n....##....\n..........\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),add(invert(triangle),line_horizontal))",
+      "id": "start_060",
+      "motif_ids": [
+        "M07",
+        "M00"
+      ],
+      "split": "start",
+      "target": "##########\n##########\n##########\n##########\n##########\n##########\n####...###\n###.....##\n##.......#\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(subtract(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))))",
+      "id": "start_061",
+      "motif_ids": [
+        "M01",
+        "M05",
+        "M02"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n..........\n.....#....\n.....#....\n.....#....\n.....#...."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "start_062",
+      "motif_ids": [
+        "M04",
+        "M08"
+      ],
+      "split": "start",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n......####\n....#.####\n...##.####\n..###.####\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),add(invert(triangle),line_horizontal))",
+      "id": "start_063",
+      "motif_ids": [
+        "M01",
+        "M05",
+        "M00"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n####..####\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_064",
+      "motif_ids": [
+        "M04",
+        "M01"
+      ],
+      "split": "start",
+      "target": ".....#....\n.....#....\n.....#....\n.....#....\n.########.\n.....#....\n.....#....\n.....#....\n.....#....\n.....#...."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(add(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "start_065",
+      "motif_ids": [
+        "M04",
+        "M06",
+        "M08"
+      ],
+      "split": "start",
+      "target": "#########.\n####.###..\n####.##...\n####.#....\n####......\n####......\n###.......\n##........\n#.........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(triangle),line_horizontal),add(invert(square),line_horizontal))",
+      "id": "start_066",
+      "motif_ids": [
+        "M00",
+        "M03"
+      ],
+      "split": "start",
+      "target": ".#########\n.........#\n.........#\n.........#\n.........#\n..........\n.........#\n.........#\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(add(add(invert(triangle),line_horizontal),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_067",
+      "motif_ids": [
+        "M00",
+        "M09",
+        "M01"
+      ],
+      "split": "start",
+      "target": ".....#....\n##...#....\n###..#....\n####.#....\n######....\n######....\n#######...\n########..\n#########.\n#########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(add(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))))",
+      "id": "start_068",
+      "motif_ids": [
+        "M10",
+        "M04"
+      ],
+      "split": "start",
+      "target": "##########\n#........#\n#.......##\n#......###\n#.....####\n#.....####\n#....#.###\n#..#.##.##\n#.##.###.#\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),subtract(add(reflect_vertical(diagonal),triangle),square))",
+      "id": "start_069",
+      "motif_ids": [
+        "M07",
+        "M04",
+        "M10"
+      ],
+      "split": "start",
+      "target": "..........\n.#......#.\n.##....#..\n.###..#...\n.#####....\n....#.....\n.####.....\n.##.#.....\n.#..#.....\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(add(invert(square),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_070",
+      "motif_ids": [
+        "M03",
+        "M04"
+      ],
+      "split": "start",
+      "target": ".....#....\n.########.\n.########.\n.########.\n.########.\n.########.\n.########.\n.########.\n.########.\n.....#...."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(add(overlap(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(triangle),line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))))",
+      "id": "start_071",
+      "motif_ids": [
+        "M05",
+        "M00",
+        "M06"
+      ],
+      "split": "start",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....##....\n....##....\n...#..#...\n..#....#..\n.#......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "start_072",
+      "motif_ids": [
+        "M01",
+        "M02"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n##########\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(subtract(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))))",
+      "id": "start_073",
+      "motif_ids": [
+        "M01",
+        "M07",
+        "M09"
+      ],
+      "split": "start",
+      "target": "..........\n........#.\n.......#..\n......#...\n####.#####\n....#.....\n...#......\n..#.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_horizontal(subtract(add(invert(square),line_horizontal),add(invert(triangle),line_horizontal))))",
+      "id": "start_074",
+      "motif_ids": [
+        "M03",
+        "M00"
+      ],
+      "split": "start",
+      "target": "..........\n.###.####.\n.###.###..\n.###.##...\n.###.#....\n.###......\n.###......\n.##.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))),reflect_horizontal(reflect_vertical(triangle)))",
+      "id": "start_075",
+      "motif_ids": [
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "split": "start",
+      "target": "..........\n#.........\n##........\n###.......\n####......\n....#.....\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(subtract(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_076",
+      "motif_ids": [
+        "M06",
+        "M01"
+      ],
+      "split": "start",
+      "target": ".........#\n........#.\n.......#..\n......#...\n.....#....\n..........\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(overlap(add(add(invert(triangle),line_horizontal),reflect_horizontal(reflect_vertical(triangle))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "start_077",
+      "motif_ids": [
+        "M00",
+        "M08",
+        "M02"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n.....#####\n....##....\n...####...\n..######..\n.########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "start_078",
+      "motif_ids": [
+        "M01",
+        "M02"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n..........\n.....#####\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),add(invert(triangle),line_horizontal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "start_079",
+      "motif_ids": [
+        "M06",
+        "M00",
+        "M04"
+      ],
+      "split": "start",
+      "target": "#....#....\n##...#....\n###..#....\n####.#....\n#########.\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "start_080",
+      "motif_ids": [
+        "M05",
+        "M02"
+      ],
+      "split": "start",
+      "target": "#........#\n.#......##\n..#....###\n...#..####\n....######\n....######\n...#######\n..########\n.#########\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(overlap(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "start_081",
+      "motif_ids": [
+        "M06",
+        "M05",
+        "M02"
+      ],
+      "split": "start",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....#.....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(overlap(subtract(reflect_diag(line_vertical),diagonal),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "start_082",
+      "motif_ids": [
+        "M11",
+        "M10"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n.####.....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_diag(add(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "start_083",
+      "motif_ids": [
+        "M05",
+        "M03",
+        "M02"
+      ],
+      "split": "start",
+      "target": "#....#...#\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "start_084",
+      "motif_ids": [
+        "M02",
+        "M04"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n#####.....\n#####.....\n###.#.....\n##..#.....\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(subtract(subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),add(invert(square),line_horizontal)))",
+      "id": "start_085",
+      "motif_ids": [
+        "M07",
+        "M06",
+        "M03"
+      ],
+      "split": "start",
+      "target": "#.........\n.#########\n.#########\n.#########\n.#########\n##########\n.#########\n.#########\n.#########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(subtract(add(invert(triangle),line_horizontal),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "start_086",
+      "motif_ids": [
+        "M00",
+        "M01"
+      ],
+      "split": "start",
+      "target": ".........#\n........##\n.......###\n......####\n.....#####\n#####.####\n...#######\n..########\n.#########\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(overlap(subtract(add(reflect_vertical(diagonal),triangle),square),add(invert(square),line_horizontal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))",
+      "id": "start_087",
+      "motif_ids": [
+        "M10",
+        "M03",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n.#......#.\n.##....#..\n.###..#...\n.#####....\n##########\n.######...\n.#######..\n.########.\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(overlap(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_horizontal(reflect_vertical(triangle))))",
+      "id": "start_088",
+      "motif_ids": [
+        "M05",
+        "M08"
+      ],
+      "split": "start",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....#.....\n....##....\n...#..#...\n..#....#..\n.#......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(overlap(add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),subtract(add(reflect_vertical(diagonal),triangle),square))))",
+      "id": "start_089",
+      "motif_ids": [
+        "M01",
+        "M04",
+        "M10"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n.....#....\n....#####.\n.....#....\n.....#....\n.....#....\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(invert(triangle),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "start_090",
+      "motif_ids": [
+        "M00",
+        "M04"
+      ],
+      "split": "start",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n..........\n....#.....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(overlap(subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),reflect_horizontal(reflect_vertical(triangle))))",
+      "id": "start_091",
+      "motif_ids": [
+        "M09",
+        "M02",
+        "M08"
+      ],
+      "split": "start",
+      "target": "..........\n........#.\n.......#..\n......#...\n.....#....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "start_092",
+      "motif_ids": [
+        "M02",
+        "M08"
+      ],
+      "split": "start",
+      "target": "#.........\n##........\n###.......\n####......\n#####.....\n#####.....\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(reflect_horizontal(reflect_vertical(triangle)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))",
+      "id": "start_093",
+      "motif_ids": [
+        "M08",
+        "M02",
+        "M06"
+      ],
+      "split": "start",
+      "target": "##########\n##########\n##########\n##########\n##########\n##########\n####..####\n###....###\n##......##\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),add(invert(square),line_horizontal)))",
+      "id": "start_094",
+      "motif_ids": [
+        "M06",
+        "M03"
+      ],
+      "split": "start",
+      "target": ".........#\n.########.\n.########.\n.########.\n##########\n.########.\n.########.\n.########.\n.########.\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(add(overlap(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),add(invert(triangle),line_horizontal)),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "start_095",
+      "motif_ids": [
+        "M01",
+        "M00",
+        "M08"
+      ],
+      "split": "start",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n#####.....\n####.#....\n###..#....\n##...#....\n#....#...."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(add(reflect_vertical(diagonal),triangle),square))",
+      "id": "start_096",
+      "motif_ids": [
+        "M05",
+        "M10"
+      ],
+      "split": "start",
+      "target": "#........#\n..........\n..........\n..........\n..........\n..........\n..........\n..........\n..........\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(overlap(add(subtract(add(reflect_vertical(diagonal),triangle),square),add(invert(square),line_horizontal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "start_097",
+      "motif_ids": [
+        "M10",
+        "M03",
+        "M01"
+      ],
+      "split": "start",
+      "target": "..........\n..........\n..........\n..........\n####.#####\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "start_098",
+      "motif_ids": [
+        "M06",
+        "M01"
+      ],
+      "split": "start",
+      "target": "....#....#\n....#...#.\n....#..#..\n....#.#...\n.....#....\n....#.....\n...##.....\n..#.#.....\n.#..#.....\n#...#....."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)))",
+      "id": "start_099",
+      "motif_ids": [
+        "M05",
+        "M06",
+        "M09"
+      ],
+      "split": "start",
+      "target": "#........#\n........#.\n.......#..\n......#...\n.....#....\n....#.....\n...#......\n..#.......\n.#........\n#........#"
+    }
+  ],
+  "tasks_test": [
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal))",
+      "id": "test_000",
+      "motif_ids": [
+        "M05",
+        "M03"
+      ],
+      "split": "test",
+      "target": "..........\n.#......#.\n..#....#..\n...#..#...\n....##....\n....##....\n...#..#...\n..#....#..\n.#......#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(triangle),line_horizontal)),add(invert(square),line_horizontal)))",
+      "id": "test_001",
+      "motif_ids": [
+        "M05",
+        "M00",
+        "M03"
+      ],
+      "split": "test",
+      "target": "#........#\n..........\n..........\n..........\n..........\n..........\n..........\n..........\n..........\n.........#"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(overlap(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "test_002",
+      "motif_ids": [
+        "M04",
+        "M08"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n.....#....\n.....#....\n.....#....\n.....#....\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "test_003",
+      "motif_ids": [
+        "M05",
+        "M04",
+        "M07"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n....##....\n....#.#...\n....#..#..\n....#...#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(overlap(add(invert(triangle),line_horizontal),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_004",
+      "motif_ids": [
+        "M00",
+        "M05"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n....##....\n.....#....\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(add(subtract(add(invert(square),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "test_005",
+      "motif_ids": [
+        "M03",
+        "M04",
+        "M08"
+      ],
+      "split": "test",
+      "target": "##########\n#########.\n#########.\n#########.\n#########.\n#####.....\n#########.\n#########.\n#########.\n#....#...."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),subtract(reflect_diag(line_vertical),diagonal))",
+      "id": "test_006",
+      "motif_ids": [
+        "M04",
+        "M11"
+      ],
+      "split": "test",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n....#.....\n..........\n....#.....\n....#.....\n....#.....\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),add(invert(triangle),line_horizontal)))",
+      "id": "test_007",
+      "motif_ids": [
+        "M02",
+        "M09",
+        "M00"
+      ],
+      "split": "test",
+      "target": "..........\n.#........\n..#.......\n...#......\n....#.....\n..........\n....###...\n...#####..\n..#######.\n.#########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(add(add(invert(triangle),line_horizontal),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))))",
+      "id": "test_008",
+      "motif_ids": [
+        "M00",
+        "M05"
+      ],
+      "split": "test",
+      "target": "#........#\n##......#.\n###....#..\n####..#...\n##########\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(add(invert(square),line_horizontal),subtract(add(reflect_vertical(diagonal),triangle),square)),subtract(reflect_diag(line_vertical),diagonal))",
+      "id": "test_009",
+      "motif_ids": [
+        "M03",
+        "M10",
+        "M11"
+      ],
+      "split": "test",
+      "target": "..........\n..######..\n...####.#.\n....##.##.\n......###.\n..........\n.......##.\n........#.\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "test_010",
+      "motif_ids": [
+        "M07",
+        "M10"
+      ],
+      "split": "test",
+      "target": "#.........\n#.........\n#.........\n#.........\n..........\n#.........\n#...##....\n#..####...\n#.######..\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(add(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),add(invert(square),line_horizontal)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))))",
+      "id": "test_011",
+      "motif_ids": [
+        "M06",
+        "M03",
+        "M05"
+      ],
+      "split": "test",
+      "target": ".########.\n#........#\n#........#\n#........#\n#........#\n..........\n#........#\n#........#\n#........#\n.########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "test_012",
+      "motif_ids": [
+        "M06",
+        "M02"
+      ],
+      "split": "test",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n#####.....\n####..#...\n###....#..\n##......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(add(add(invert(square),line_horizontal),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(reflect_diag(line_vertical),diagonal)))",
+      "id": "test_013",
+      "motif_ids": [
+        "M03",
+        "M06",
+        "M11"
+      ],
+      "split": "test",
+      "target": ".........#\n.########.\n.########.\n.########.\n.....#....\n.########.\n.########.\n.########.\n.########.\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_horizontal(subtract(add(invert(square),line_horizontal),add(invert(triangle),line_horizontal))))",
+      "id": "test_014",
+      "motif_ids": [
+        "M03",
+        "M00"
+      ],
+      "split": "test",
+      "target": "##########\n#........#\n#.......##\n#......###\n##########\n#....#####\n#...######\n#..#######\n#.########\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(subtract(reflect_diag(line_vertical),diagonal),add(invert(triangle),line_horizontal)),subtract(add(reflect_vertical(diagonal),triangle),square))",
+      "id": "test_015",
+      "motif_ids": [
+        "M11",
+        "M00",
+        "M10"
+      ],
+      "split": "test",
+      "target": "..........\n........#.\n.......#..\n......#...\n.....#....\n.#####....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(add(invert(triangle),line_horizontal),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_016",
+      "motif_ids": [
+        "M00",
+        "M05"
+      ],
+      "split": "test",
+      "target": ".....#....\n#....#....\n##...#....\n###..#....\n####......\n####......\n###.##....\n##.####...\n#.######..\n.########."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(add(subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(triangle),line_horizontal)),add(invert(square),line_horizontal))))",
+      "id": "test_017",
+      "motif_ids": [
+        "M02",
+        "M00",
+        "M03"
+      ],
+      "split": "test",
+      "target": "#########.\n#.........\n#.........\n#.........\n#.........\n..........\n#.........\n#.........\n#.........\n#########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(invert(square),line_horizontal),reflect_horizontal(reflect_vertical(triangle)))",
+      "id": "test_018",
+      "motif_ids": [
+        "M03",
+        "M08"
+      ],
+      "split": "test",
+      "target": "##########\n.#########\n.#########\n.#########\n.#########\n##########\n.#########\n.#########\n.#########\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(add(add(invert(triangle),line_horizontal),add(invert(square),line_horizontal)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))))",
+      "id": "test_019",
+      "motif_ids": [
+        "M00",
+        "M03",
+        "M07"
+      ],
+      "split": "test",
+      "target": ".....#....\n.....#....\n.....#..#.\n.....#.##.\n.....####.\n.....####.\n....#####.\n...######.\n..#######.\n.########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(invert(add(add(invert(square),line_horizontal),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "test_020",
+      "motif_ids": [
+        "M03",
+        "M08"
+      ],
+      "split": "test",
+      "target": ".####.####\n.........#\n.........#\n.........#\n.........#\n.........#\n.........#\n.........#\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(add(invert(square),line_horizontal),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "test_021",
+      "motif_ids": [
+        "M03",
+        "M06",
+        "M02"
+      ],
+      "split": "test",
+      "target": "##########\n#########.\n#########.\n#########.\n#########.\n##########\n######.##.\n#######.#.\n########..\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(overlap(add(invert(square),line_horizontal),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))))",
+      "id": "test_022",
+      "motif_ids": [
+        "M03",
+        "M02"
+      ],
+      "split": "test",
+      "target": ".....#....\n.########.\n.#######..\n.######...\n.#####....\n.####.....\n.###......\n.##.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(subtract(subtract(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "test_023",
+      "motif_ids": [
+        "M10",
+        "M09",
+        "M08"
+      ],
+      "split": "test",
+      "target": "##########\n##########\n########.#\n#######..#\n######...#\n#####....#\n####.....#\n###......#\n##.......#\n##########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal))",
+      "id": "test_024",
+      "motif_ids": [
+        "M05",
+        "M03"
+      ],
+      "split": "test",
+      "target": "#........#\n.########.\n.########.\n.########.\n.########.\n##########\n.########.\n.########.\n.########.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),add(invert(triangle),line_horizontal)))",
+      "id": "test_025",
+      "motif_ids": [
+        "M02",
+        "M06",
+        "M00"
+      ],
+      "split": "test",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....#.....\n..........\n....###...\n...#####..\n..#######.\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))))",
+      "id": "test_026",
+      "motif_ids": [
+        "M02",
+        "M07"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n.....#....\n.....#....\n.....#....\n.....#....\n.....#...."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(triangle),line_horizontal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "test_027",
+      "motif_ids": [
+        "M05",
+        "M00",
+        "M02"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n..........\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(subtract(add(reflect_vertical(diagonal),triangle),square),add(invert(triangle),line_horizontal)))",
+      "id": "test_028",
+      "motif_ids": [
+        "M10",
+        "M00"
+      ],
+      "split": "test",
+      "target": "..........\n.#########\n.#########\n.#########\n##########\n.#########\n.#########\n.#########\n.#########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(add(add(subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "test_029",
+      "motif_ids": [
+        "M09",
+        "M01",
+        "M08"
+      ],
+      "split": "test",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n.....#....\n....######\n...#######\n..########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(invert(triangle),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "test_030",
+      "motif_ids": [
+        "M00",
+        "M04"
+      ],
+      "split": "test",
+      "target": ".#########\n..########\n...#######\n....######\n....######\n##########\n....#..###\n....#...##\n....#....#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(add(subtract(reflect_diag(line_vertical),diagonal),add(invert(square),line_horizontal)),add(invert(triangle),line_horizontal)))",
+      "id": "test_031",
+      "motif_ids": [
+        "M11",
+        "M03",
+        "M00"
+      ],
+      "split": "test",
+      "target": "..........\n.########.\n.#######..\n.######...\n..........\n.####.....\n.###......\n.##.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "test_032",
+      "motif_ids": [
+        "M07",
+        "M01"
+      ],
+      "split": "test",
+      "target": ".........#\n........##\n.......###\n......####\n#####.####\n....######\n...#######\n..########\n.#########\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(overlap(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),add(invert(triangle),line_horizontal))",
+      "id": "test_033",
+      "motif_ids": [
+        "M06",
+        "M04",
+        "M00"
+      ],
+      "split": "test",
+      "target": ".#########\n..########\n...#######\n....######\n....######\n##########\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))))",
+      "id": "test_034",
+      "motif_ids": [
+        "M05",
+        "M02"
+      ],
+      "split": "test",
+      "target": "##########\n.#########\n..########\n...#######\n....######\n....######\n...#..####\n..#....###\n.#......##\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(overlap(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "test_035",
+      "motif_ids": [
+        "M05",
+        "M03",
+        "M02"
+      ],
+      "split": "test",
+      "target": ".........#\n........#.\n.......##.\n......###.\n.....#####\n....#####.\n...######.\n..#######.\n.########.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))",
+      "id": "test_036",
+      "motif_ids": [
+        "M05",
+        "M06"
+      ],
+      "split": "test",
+      "target": ".........#\n........#.\n.......#..\n......#...\n.....#....\n....##....\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(subtract(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_037",
+      "motif_ids": [
+        "M10",
+        "M01",
+        "M05"
+      ],
+      "split": "test",
+      "target": "..........\n.#......#.\n..#....#..\n...#..#...\n....##....\n.....#....\n...#..#...\n..#....#..\n.#......#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(add(add(invert(triangle),line_horizontal),add(invert(square),line_horizontal))))",
+      "id": "test_038",
+      "motif_ids": [
+        "M00",
+        "M03"
+      ],
+      "split": "test",
+      "target": "#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n.....#...."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),add(invert(square),line_horizontal))",
+      "id": "test_039",
+      "motif_ids": [
+        "M07",
+        "M06",
+        "M03"
+      ],
+      "split": "test",
+      "target": ".#########\n#.........\n#.........\n#.........\n#.........\n..........\n#.........\n#.........\n#.........\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))))",
+      "id": "test_040",
+      "motif_ids": [
+        "M06",
+        "M07"
+      ],
+      "split": "test",
+      "target": ".........#\n........#.\n.......#..\n......#...\n.....#....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(overlap(add(add(invert(triangle),line_horizontal),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "test_041",
+      "motif_ids": [
+        "M00",
+        "M06",
+        "M02"
+      ],
+      "split": "test",
+      "target": "..........\n#........#\n##......##\n###....###\n####..####\n#####.....\n##########\n##########\n##########\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(square),line_horizontal),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "test_042",
+      "motif_ids": [
+        "M03",
+        "M07"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n........#.\n.......##.\n......###.\n##########\n....#####.\n...######.\n..#######.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),reflect_horizontal(reflect_vertical(triangle))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_043",
+      "motif_ids": [
+        "M06",
+        "M08",
+        "M05"
+      ],
+      "split": "test",
+      "target": "..........\n#.........\n##........\n###.......\n####......\n####......\n###.##....\n##.####...\n#.######..\n.########."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(subtract(reflect_horizontal(reflect_vertical(triangle)),subtract(reflect_diag(line_vertical),diagonal))))",
+      "id": "test_044",
+      "motif_ids": [
+        "M08",
+        "M11"
+      ],
+      "split": "test",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n####.#####\n....######\n...#######\n..########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "test_045",
+      "motif_ids": [
+        "M10",
+        "M07",
+        "M05"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n.###......\n....##....\n...####...\n..######..\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "test_046",
+      "motif_ids": [
+        "M06",
+        "M04"
+      ],
+      "split": "test",
+      "target": ".........#\n.....#..#.\n.....#.#..\n.....##...\n.....#....\n.....#....\n...#.#....\n..#..#....\n.#...#....\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(subtract(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_horizontal(reflect_vertical(triangle))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "test_047",
+      "motif_ids": [
+        "M02",
+        "M08",
+        "M01"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n....##....\n...####...\n..######..\n.########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),add(invert(square),line_horizontal))",
+      "id": "test_048",
+      "motif_ids": [
+        "M07",
+        "M03"
+      ],
+      "split": "test",
+      "target": "..........\n.########.\n.#######..\n.######...\n.#####....\n..........\n.###......\n.##.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(add(subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)),reflect_horizontal(reflect_vertical(triangle))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "test_049",
+      "motif_ids": [
+        "M09",
+        "M08",
+        "M04"
+      ],
+      "split": "test",
+      "target": "..........\n.....#....\n.....#....\n.....#....\n.....#....\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(subtract(subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "test_050",
+      "motif_ids": [
+        "M09",
+        "M01"
+      ],
+      "split": "test",
+      "target": "..........\n.#........\n..#.......\n...#......\n..........\n.....#....\n......#...\n.......#..\n........#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),reflect_horizontal(reflect_vertical(triangle)))",
+      "id": "test_051",
+      "motif_ids": [
+        "M02",
+        "M09",
+        "M08"
+      ],
+      "split": "test",
+      "target": "##########\n.########.\n..######..\n...####...\n....##....\n.....#....\n......#...\n.......#..\n........#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "test_052",
+      "motif_ids": [
+        "M06",
+        "M04"
+      ],
+      "split": "test",
+      "target": ".........#\n....#...#.\n....#..#..\n....#.#...\n....#.....\n....#.....\n...##.....\n..#.#.....\n.#..#.....\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(invert(add(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_horizontal(reflect_vertical(triangle))),subtract(add(reflect_vertical(diagonal),triangle),square))))",
+      "id": "test_053",
+      "motif_ids": [
+        "M02",
+        "M08",
+        "M10"
+      ],
+      "split": "test",
+      "target": ".#########\n.........#\n.........#\n.........#\n.........#\n.........#\n....##...#\n...####..#\n..######.#\n.#########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))",
+      "id": "test_054",
+      "motif_ids": [
+        "M01",
+        "M06"
+      ],
+      "split": "test",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....#.....\n####.#####\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(add(overlap(subtract(reflect_diag(line_vertical),diagonal),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))))",
+      "id": "test_055",
+      "motif_ids": [
+        "M11",
+        "M01",
+        "M06"
+      ],
+      "split": "test",
+      "target": ".........#\n........#.\n.......#..\n......#...\n.....#....\n####..####\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),add(invert(triangle),line_horizontal))))",
+      "id": "test_056",
+      "motif_ids": [
+        "M06",
+        "M00"
+      ],
+      "split": "test",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n..........\n....######\n...#######\n..########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(subtract(add(reflect_vertical(diagonal),triangle),square),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "test_057",
+      "motif_ids": [
+        "M10",
+        "M05",
+        "M07"
+      ],
+      "split": "test",
+      "target": "#........#\n.#......#.\n.##....#..\n.###..#...\n.#####....\n..........\n.###......\n.##.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(subtract(subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)))",
+      "id": "test_058",
+      "motif_ids": [
+        "M09",
+        "M04"
+      ],
+      "split": "test",
+      "target": "..........\n........#.\n.......#..\n......#...\n.....#....\n..........\n...#......\n..#.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(overlap(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),subtract(add(reflect_vertical(diagonal),triangle),square))))",
+      "id": "test_059",
+      "motif_ids": [
+        "M02",
+        "M05",
+        "M10"
+      ],
+      "split": "test",
+      "target": "##########\n#.######.#\n##.####..#\n###.##...#\n####.....#\n####.....#\n###.##...#\n##.####..#\n#.######.#\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(triangle),line_horizontal),reflect_horizontal(reflect_vertical(triangle)))",
+      "id": "test_060",
+      "motif_ids": [
+        "M00",
+        "M08"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n#####.....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(overlap(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),add(invert(triangle),line_horizontal)),add(invert(square),line_horizontal)))",
+      "id": "test_061",
+      "motif_ids": [
+        "M07",
+        "M00",
+        "M03"
+      ],
+      "split": "test",
+      "target": "..........\n.########.\n.########.\n.########.\n##########\n.########.\n.########.\n.########.\n.########.\n.#########"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_horizontal(overlap(subtract(add(reflect_vertical(diagonal),triangle),square),add(invert(square),line_horizontal))))",
+      "id": "test_062",
+      "motif_ids": [
+        "M10",
+        "M03"
+      ],
+      "split": "test",
+      "target": "..........\n.########.\n.#######..\n.######...\n.#####....\n.#####....\n.###..#...\n.##....#..\n.#......#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "test_063",
+      "motif_ids": [
+        "M06",
+        "M05",
+        "M04"
+      ],
+      "split": "test",
+      "target": "#........#\n.#..#...#.\n..#.#..#..\n...##.#...\n....##....\n....##....\n...##.#...\n..#.#..#..\n.#..#...#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(subtract(add(invert(triangle),line_horizontal),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_064",
+      "motif_ids": [
+        "M00",
+        "M05"
+      ],
+      "split": "test",
+      "target": "#........#\n##......#.\n###....#..\n####..#...\n######....\n....##....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(overlap(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal)),subtract(add(reflect_vertical(diagonal),triangle),square))))",
+      "id": "test_065",
+      "motif_ids": [
+        "M05",
+        "M03",
+        "M10"
+      ],
+      "split": "test",
+      "target": "##########\n#.######.#\n##.####..#\n###.##...#\n####.....#\n####.....#\n###......#\n##.......#\n#........#\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))",
+      "id": "test_066",
+      "motif_ids": [
+        "M07",
+        "M06"
+      ],
+      "split": "test",
+      "target": ".#########\n#.#######.\n##.#####..\n###.###...\n####.#....\n..........\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(overlap(reflect_horizontal(reflect_vertical(triangle)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))))",
+      "id": "test_067",
+      "motif_ids": [
+        "M08",
+        "M02",
+        "M06"
+      ],
+      "split": "test",
+      "target": "..........\n#.........\n##........\n###.......\n####......\n#####.....\n####......\n###.......\n##........\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_horizontal(subtract(add(invert(triangle),line_horizontal),subtract(reflect_diag(line_vertical),diagonal))))",
+      "id": "test_068",
+      "motif_ids": [
+        "M00",
+        "M11"
+      ],
+      "split": "test",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n....######\n.....#####\n...#.#####\n..##.#####\n.###.#####"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "test_069",
+      "motif_ids": [
+        "M07",
+        "M06",
+        "M04"
+      ],
+      "split": "test",
+      "target": "..........\n....#.....\n....#.....\n....#.....\n..........\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(subtract(add(invert(square),line_horizontal),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "test_070",
+      "motif_ids": [
+        "M03",
+        "M10"
+      ],
+      "split": "test",
+      "target": "##########\n##......##\n###....#.#\n####..#..#\n######...#\n.#####....\n#######..#\n########.#\n##########\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(invert(overlap(subtract(add(invert(square),line_horizontal),subtract(reflect_diag(line_vertical),diagonal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "test_071",
+      "motif_ids": [
+        "M03",
+        "M11",
+        "M02"
+      ],
+      "split": "test",
+      "target": "##########\n#....#...#\n#....#..##\n#....#.###\n#....#####\n#....#####\n#...######\n#..#######\n#.########\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "test_072",
+      "motif_ids": [
+        "M07",
+        "M05"
+      ],
+      "split": "test",
+      "target": ".########.\n#.######..\n##.####...\n###.##....\n####......\n..........\n###.......\n##........\n#.........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(subtract(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_073",
+      "motif_ids": [
+        "M02",
+        "M07",
+        "M05"
+      ],
+      "split": "test",
+      "target": "#........#\n.#......##\n..#....###\n...#..####\n....######\n##########\n...#######\n..########\n.#########\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))))",
+      "id": "test_074",
+      "motif_ids": [
+        "M02",
+        "M06"
+      ],
+      "split": "test",
+      "target": ".........#\n#.......#.\n##.....#..\n###...#...\n####.#....\n#####.....\n######....\n#######...\n########..\n#########."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(reflect_diag(line_vertical),diagonal))",
+      "id": "test_075",
+      "motif_ids": [
+        "M07",
+        "M06",
+        "M11"
+      ],
+      "split": "test",
+      "target": "##########\n#########.\n########..\n#######...\n######....\n..........\n####..#...\n###....#..\n##......#.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(subtract(add(reflect_vertical(diagonal),triangle),square),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))))",
+      "id": "test_076",
+      "motif_ids": [
+        "M10",
+        "M07"
+      ],
+      "split": "test",
+      "target": "#.........\n#########.\n########..\n#######...\n.#####....\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(overlap(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(triangle),line_horizontal)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))))",
+      "id": "test_077",
+      "motif_ids": [
+        "M05",
+        "M00",
+        "M02"
+      ],
+      "split": "test",
+      "target": "#...#....#\n.#..#...##\n..#.#..###\n...##.####\n....######\n.....#####\n......####\n.......###\n........##\n.........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "test_078",
+      "motif_ids": [
+        "M05",
+        "M07"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n....##....\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(add(reflect_horizontal(reflect_vertical(triangle)),add(invert(triangle),line_horizontal)),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "test_079",
+      "motif_ids": [
+        "M08",
+        "M00",
+        "M10"
+      ],
+      "split": "test",
+      "target": "..........\n.#......#.\n..#....#..\n...#..#...\n....##....\n....#####.\n...#......\n..#.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(subtract(reflect_horizontal(reflect_vertical(triangle)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "test_080",
+      "motif_ids": [
+        "M08",
+        "M01"
+      ],
+      "split": "test",
+      "target": "#.........\n##........\n###.......\n####......\n..........\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(reflect_diag(line_vertical),diagonal)),subtract(add(reflect_vertical(diagonal),triangle),square))",
+      "id": "test_081",
+      "motif_ids": [
+        "M05",
+        "M11",
+        "M10"
+      ],
+      "split": "test",
+      "target": "..........\n.#......#.\n..#....#..\n...#..#...\n....##....\n.#####....\n...#..#...\n..#....#..\n.#......#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(subtract(add(invert(triangle),line_horizontal),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))))",
+      "id": "test_082",
+      "motif_ids": [
+        "M00",
+        "M09"
+      ],
+      "split": "test",
+      "target": ".....#....\n#....#....\n##...#....\n###..#....\n####.#....\n#####.....\n######....\n#######...\n########..\n#########."
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(add(overlap(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(reflect_vertical(triangle))),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))))",
+      "id": "test_083",
+      "motif_ids": [
+        "M01",
+        "M08",
+        "M07"
+      ],
+      "split": "test",
+      "target": "..........\n#.........\n##........\n###.......\n####......\n.....#####\n######....\n#######...\n########..\n#########."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(square),line_horizontal),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "test_084",
+      "motif_ids": [
+        "M03",
+        "M04"
+      ],
+      "split": "test",
+      "target": "..........\n.###.####.\n.###.####.\n.###.####.\n.###.####.\n####.#####\n.###.####.\n.###.####.\n.###.####.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(overlap(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),add(invert(triangle),line_horizontal)))",
+      "id": "test_085",
+      "motif_ids": [
+        "M05",
+        "M06",
+        "M00"
+      ],
+      "split": "test",
+      "target": "#.........\n.#........\n..#.......\n...#......\n....#.....\n....##....\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal))))",
+      "id": "test_086",
+      "motif_ids": [
+        "M05",
+        "M03"
+      ],
+      "split": "test",
+      "target": ".########.\n#........#\n#........#\n#........#\n..........\n#........#\n#........#\n#........#\n#........#\n.########."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square))",
+      "id": "test_087",
+      "motif_ids": [
+        "M06",
+        "M01",
+        "M04"
+      ],
+      "split": "test",
+      "target": "#.........\n.#........\n..#.......\n...#......\n..........\n####.#####\n......#...\n.......#..\n........#.\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(reflect_horizontal(reflect_vertical(triangle)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "test_088",
+      "motif_ids": [
+        "M08",
+        "M05"
+      ],
+      "split": "test",
+      "target": "#........#\n##......#.\n###....#..\n####..#...\n######....\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_diag(subtract(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),add(invert(triangle),line_horizontal))))",
+      "id": "test_089",
+      "motif_ids": [
+        "M04",
+        "M06",
+        "M00"
+      ],
+      "split": "test",
+      "target": ".........#\n........#.\n.......#..\n......#...\n..........\n....#.###.\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(add(reflect_vertical(diagonal),triangle),square))",
+      "id": "test_090",
+      "motif_ids": [
+        "M07",
+        "M10"
+      ],
+      "split": "test",
+      "target": "..........\n.#......#.\n.##....#..\n.###..#...\n.#####....\n..........\n.###......\n.##.......\n.#........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(subtract(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),add(invert(triangle),line_horizontal)))",
+      "id": "test_091",
+      "motif_ids": [
+        "M06",
+        "M04",
+        "M00"
+      ],
+      "split": "test",
+      "target": "..........\n#.........\n##........\n###.......\n#####.....\n..........\n######....\n#######...\n########..\n#########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)))))",
+      "id": "test_092",
+      "motif_ids": [
+        "M02",
+        "M09"
+      ],
+      "split": "test",
+      "target": "##########\n.#########\n..########\n...#######\n....######\n....######\n...#..####\n..#....###\n.#......##\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),add(invert(triangle),line_horizontal))",
+      "id": "test_093",
+      "motif_ids": [
+        "M06",
+        "M01",
+        "M00"
+      ],
+      "split": "test",
+      "target": "##########\n.#########\n..########\n...#######\n....######\n##########\n......####\n.......###\n........##\n.........#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(subtract(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(square),line_horizontal)))",
+      "id": "test_094",
+      "motif_ids": [
+        "M02",
+        "M03"
+      ],
+      "split": "test",
+      "target": "##########\n.........#\n.........#\n.........#\n.........#\n..........\n.........#\n.........#\n.........#\n.........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(invert(add(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))))",
+      "id": "test_095",
+      "motif_ids": [
+        "M04",
+        "M09",
+        "M06"
+      ],
+      "split": "test",
+      "target": "#########.\n#####.##.#\n#####.#.##\n#####..###\n#####.####\n####..####\n###.#.####\n##.##.####\n#.###.####\n.#########"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "test_096",
+      "motif_ids": [
+        "M01",
+        "M02"
+      ],
+      "split": "test",
+      "target": "..........\n..........\n..........\n..........\n..........\n####......\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(add(subtract(subtract(add(reflect_vertical(diagonal),triangle),square),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))))",
+      "id": "test_097",
+      "motif_ids": [
+        "M10",
+        "M06",
+        "M02"
+      ],
+      "split": "test",
+      "target": "#.........\n########..\n#######...\n######....\n######....\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),add(invert(square),line_horizontal))))",
+      "id": "test_098",
+      "motif_ids": [
+        "M05",
+        "M03"
+      ],
+      "split": "test",
+      "target": "#........#\n.########.\n.########.\n.########.\n##########\n.########.\n.########.\n.########.\n.########.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(triangle),line_horizontal)),add(invert(square),line_horizontal))",
+      "id": "test_099",
+      "motif_ids": [
+        "M02",
+        "M00",
+        "M03"
+      ],
+      "split": "test",
+      "target": "##########\n#........#\n#........#\n#........#\n#........#\n..........\n#........#\n#........#\n#........#\n#........."
+    }
+  ],
+  "tasks_val": [
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),add(invert(square),line_horizontal))",
+      "id": "val_000",
+      "motif_ids": [
+        "M02",
+        "M03"
+      ],
+      "split": "val",
+      "target": "##########\n#########.\n#########.\n#########.\n#########.\n##########\n#########.\n#########.\n#########.\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(overlap(subtract(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "val_001",
+      "motif_ids": [
+        "M07",
+        "M01",
+        "M10"
+      ],
+      "split": "val",
+      "target": "##########\n#.######.#\n#..####.##\n#...##.###\n#.....####\n##########\n#...######\n#..#######\n#.########\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "reflect_horizontal",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_horizontal(overlap(subtract(add(reflect_vertical(diagonal),triangle),square),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "val_002",
+      "motif_ids": [
+        "M10",
+        "M08"
+      ],
+      "split": "val",
+      "target": "..........\n.#........\n..#.......\n...#......\n....#.....\n....##....\n...#..#...\n..#....#..\n.#......#.\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),add(invert(square),line_horizontal)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))",
+      "id": "val_003",
+      "motif_ids": [
+        "M04",
+        "M03",
+        "M06"
+      ],
+      "split": "val",
+      "target": "..........\n..#######.\n.#.######.\n.##.#####.\n.###.####.\n##########\n.#####.##.\n.######.#.\n.#######..\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(add(invert(triangle),line_horizontal),subtract(reflect_diag(line_vertical),diagonal)))",
+      "id": "val_004",
+      "motif_ids": [
+        "M00",
+        "M11"
+      ],
+      "split": "val",
+      "target": ".....#....\n#....#....\n##...#....\n###..#....\n####.#....\n######....\n######....\n#######...\n########..\n#########."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag",
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(reflect_diag(add(add(reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),add(invert(square),line_horizontal))))",
+      "id": "val_005",
+      "motif_ids": [
+        "M05",
+        "M01",
+        "M03"
+      ],
+      "split": "val",
+      "target": "#...#....#\n.########.\n.########.\n.########.\n.########.\n.########.\n.########.\n.########.\n.########.\n#...#....#"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(triangle),line_horizontal),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "val_006",
+      "motif_ids": [
+        "M00",
+        "M07"
+      ],
+      "split": "val",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n##########\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(subtract(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),add(invert(triangle),line_horizontal)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))))",
+      "id": "val_007",
+      "motif_ids": [
+        "M06",
+        "M00",
+        "M01"
+      ],
+      "split": "val",
+      "target": ".#########\n#.########\n##.#######\n###.######\n####.#####\n....#.....\n######.###\n#######.##\n########.#\n#########."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(reflect_vertical(add(add(invert(triangle),line_horizontal),reflect_horizontal(reflect_vertical(triangle)))))",
+      "id": "val_008",
+      "motif_ids": [
+        "M00",
+        "M08"
+      ],
+      "split": "val",
+      "target": "#.........\n##........\n###.......\n####......\n##########\n######....\n#######...\n########..\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "overlap",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(overlap(add(invert(triangle),line_horizontal),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),add(invert(square),line_horizontal))",
+      "id": "val_009",
+      "motif_ids": [
+        "M00",
+        "M02",
+        "M03"
+      ],
+      "split": "val",
+      "target": ".#########\n..........\n..........\n..........\n..........\n..........\n..........\n..........\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(overlap(reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)),reflect_horizontal(reflect_vertical(triangle))))",
+      "id": "val_010",
+      "motif_ids": [
+        "M02",
+        "M08"
+      ],
+      "split": "val",
+      "target": "..........\n#........#\n##......##\n###....###\n####..####\n##########\n##########\n##########\n##########\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(invert(add(subtract(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal)))),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))))",
+      "id": "val_011",
+      "motif_ids": [
+        "M06",
+        "M01",
+        "M07"
+      ],
+      "split": "val",
+      "target": ".....#....\n.....#...#\n.....#..##\n.....#.###\n.....#####\n.....#####\n....##.###\n...####.##\n..######.#\n.########."
+    },
+    {
+      "combine_ops": [
+        "overlap"
+      ],
+      "glue_ops": [],
+      "hidden_program": "overlap(add(invert(square),line_horizontal),add(invert(triangle),line_horizontal))",
+      "id": "val_012",
+      "motif_ids": [
+        "M03",
+        "M00"
+      ],
+      "split": "val",
+      "target": "..........\n..#######.\n...######.\n....#####.\n.....####.\n##########\n.......##.\n........#.\n..........\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "overlap"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(overlap(add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "val_013",
+      "motif_ids": [
+        "M07",
+        "M04",
+        "M05"
+      ],
+      "split": "val",
+      "target": ".########.\n#.######.#\n##.####.##\n###.##.###\n####..####\n####.#####\n###.######\n##.#######\n#.########\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(reflect_vertical(subtract(reflect_horizontal(reflect_vertical(triangle)),add(invert(triangle),line_horizontal))))",
+      "id": "val_014",
+      "motif_ids": [
+        "M08",
+        "M00"
+      ],
+      "split": "val",
+      "target": ".........#\n........#.\n.......#..\n......#...\n..........\n....#.....\n...#......\n..#.......\n.#........\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(subtract(reflect_horizontal(reflect_vertical(triangle)),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)))",
+      "id": "val_015",
+      "motif_ids": [
+        "M08",
+        "M06",
+        "M07"
+      ],
+      "split": "val",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n.....#####\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_diag"
+      ],
+      "hidden_program": "reflect_diag(add(reflect_horizontal(reflect_vertical(triangle)),subtract(add(reflect_vertical(diagonal),triangle),square)))",
+      "id": "val_016",
+      "motif_ids": [
+        "M08",
+        "M10"
+      ],
+      "split": "val",
+      "target": "#.........\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n#########.\n##########"
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "reflect_vertical",
+        "invert"
+      ],
+      "hidden_program": "invert(reflect_vertical(subtract(add(reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))),subtract(reflect_diag(reflect_horizontal(line_horizontal)),square)),subtract(line_horizontal,reflect_vertical(reflect_diag(diagonal))))))",
+      "id": "val_017",
+      "motif_ids": [
+        "M06",
+        "M04",
+        "M01"
+      ],
+      "split": "val",
+      "target": "#########.\n#####.##.#\n#####.#.##\n#####..###\n#####.####\n#####.####\n###.#.####\n##.##.####\n#.###.####\n.#########"
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(add(invert(triangle),line_horizontal),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical)))",
+      "id": "val_018",
+      "motif_ids": [
+        "M00",
+        "M09"
+      ],
+      "split": "val",
+      "target": ".#########\n..########\n...#######\n....######\n.....#####\n#####.####\n.......###\n........##\n.........#\n.........."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "add"
+      ],
+      "glue_ops": [
+        "reflect_vertical"
+      ],
+      "hidden_program": "reflect_vertical(add(add(add(invert(square),line_horizontal),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical))))),subtract(diagonal,subtract(subtract(reflect_horizontal(square),line_horizontal),line_vertical))))",
+      "id": "val_019",
+      "motif_ids": [
+        "M03",
+        "M06",
+        "M09"
+      ],
+      "split": "val",
+      "target": ".........#\n.########.\n.########.\n.########.\n.########.\n##########\n.########.\n.########.\n.########.\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(subtract(add(invert(square),line_horizontal),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))))",
+      "id": "val_020",
+      "motif_ids": [
+        "M03",
+        "M05"
+      ],
+      "split": "val",
+      "target": "##########\n##......##\n#.#....#.#\n#..#..#..#\n....##....\n#...##...#\n#..#..#..#\n#.#....#.#\n##......##\n##########"
+    },
+    {
+      "combine_ops": [
+        "subtract",
+        "add"
+      ],
+      "glue_ops": [],
+      "hidden_program": "add(subtract(add(invert(square),line_horizontal),subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal))),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal)))",
+      "id": "val_021",
+      "motif_ids": [
+        "M03",
+        "M07",
+        "M05"
+      ],
+      "split": "val",
+      "target": "#........#\n.#......#.\n..#....##.\n...#..###.\n....#####.\n##########\n...######.\n..#######.\n.########.\n#........#"
+    },
+    {
+      "combine_ops": [
+        "add"
+      ],
+      "glue_ops": [
+        "invert"
+      ],
+      "hidden_program": "invert(add(subtract(reflect_horizontal(triangle),reflect_vertical(line_horizontal)),reflect_diag(add(add(diagonal,reflect_horizontal(diagonal)),diagonal))))",
+      "id": "val_022",
+      "motif_ids": [
+        "M07",
+        "M05"
+      ],
+      "split": "val",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n####..####\n....##.###\n...####.##\n..######.#\n.########."
+    },
+    {
+      "combine_ops": [
+        "add",
+        "subtract"
+      ],
+      "glue_ops": [
+        "invert",
+        "reflect_horizontal"
+      ],
+      "hidden_program": "reflect_horizontal(invert(subtract(add(subtract(reflect_diag(reflect_horizontal(line_horizontal)),square),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle))),reflect_diag(reflect_diag(subtract(diagonal,reflect_diag(line_vertical)))))))",
+      "id": "val_023",
+      "motif_ids": [
+        "M04",
+        "M02",
+        "M06"
+      ],
+      "split": "val",
+      "target": ".#########\n..##.#####\n...#.#####\n.....#####\n.....#####\n....#.####\n...#...###\n..#.....##\n.#.......#\n#........."
+    },
+    {
+      "combine_ops": [
+        "subtract"
+      ],
+      "glue_ops": [],
+      "hidden_program": "subtract(reflect_horizontal(reflect_vertical(triangle)),reflect_horizontal(add(reflect_vertical(reflect_horizontal(diagonal)),triangle)))",
+      "id": "val_024",
+      "motif_ids": [
+        "M08",
+        "M02"
+      ],
+      "split": "val",
+      "target": "..........\n.........#\n........##\n.......###\n......####\n.....#####\n......####\n.......###\n........##\n.........#"
+    }
+  ],
+  "world_seed": 6464
+}

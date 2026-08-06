@@ -1,0 +1,51 @@
+output_dir: experiment/data/problem_sets/generator_v1
+world_seeds: [6460, 6461, 6462, 6463, 6464]
+
+sizes:
+  n_start: 100
+  n_val: 25
+  n_test: 100
+
+motifs:
+  count: 12
+  min_ops: 2
+  max_ops: 4
+  rarity_floor: 0.02
+
+tasks:
+  motifs_per_task_pattern: [2, 3]
+  glue_ops_per_task_pattern: [0, 1, 2]
+  sample_motifs_with_replacement: false
+  min_filled_cells: 3
+  max_filled_cells: 85
+  max_rejection_attempts: 1000
+
+conditions:
+  - name: reversed_a0
+    alt_kind: reversed
+    alpha_val: 0.0
+    alpha_test: 0.0
+  - name: reversed_a05
+    alt_kind: reversed
+    alpha_val: 0.5
+    alpha_test: 0.5
+  - name: reversed_a1
+    alt_kind: reversed
+    alpha_val: 1.0
+    alpha_test: 1.0
+  - name: permuted_a0
+    alt_kind: permuted
+    alpha_val: 0.0
+    alpha_test: 0.0
+  - name: permuted_a05
+    alt_kind: permuted
+    alpha_val: 0.5
+    alpha_test: 0.5
+  - name: permuted_a1
+    alt_kind: permuted
+    alpha_val: 1.0
+    alpha_test: 1.0
+  - name: stale_reversed
+    alt_kind: reversed
+    alpha_val: 0.5
+    alpha_test: 1.0

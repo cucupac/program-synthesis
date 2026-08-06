@@ -1,0 +1,1926 @@
+{
+  "arms": {
+    "best_k_from_c_oracle": {
+      "arm": "best_k_from_c_oracle",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M01",
+          "M04",
+          "M07"
+        ],
+        "motif_match_count": 3,
+        "precision": 0.3,
+        "recall": 0.25,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "add(line_horizontal,square)",
+        "invert(blank)",
+        "subtract(line_horizontal,line_vertical)",
+        "invert(subtract(square,diagonal))",
+        "invert(reflect_horizontal(line_horizontal))",
+        "reflect_vertical(add(line_vertical,square))",
+        "reflect_horizontal(subtract(square,diagonal))",
+        "reflect_horizontal(add(diagonal,square))",
+        "overlap(diagonal,reflect_horizontal(line_horizontal))",
+        "invert(reflect_vertical(line_vertical))"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 13650000,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 0,
+        "selection_cost_candidate_programs_tried": 13650000,
+        "solution_segmentations_evaluated": 0,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 8214.3375,
+        "mean_search_cost": 12571.47,
+        "solve_rate": 0.8,
+        "solved_count": 80,
+        "task_count": 100,
+        "unique_outputs": 8698
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6650.9473684210525,
+        "mean_search_cost": 12254.72,
+        "solve_rate": 0.76,
+        "solved_count": 19,
+        "task_count": 25,
+        "unique_outputs": 8698
+      }
+    },
+    "compression_on_all_100_starter": {
+      "arm": "compression_on_all_100_starter",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M00",
+          "M01",
+          "M09"
+        ],
+        "motif_match_count": 3,
+        "precision": 0.3,
+        "recall": 0.25,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "add(line_horizontal,square)",
+        "reflect_vertical(add(add(line_horizontal,line_vertical),square))",
+        "reflect_vertical(add(add(line_vertical,square),diagonal))",
+        "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+        "add(diagonal,square)",
+        "subtract(line_horizontal,line_vertical)",
+        "subtract(square,diagonal)",
+        "add(add(line_horizontal,square),diagonal)",
+        "subtract(square,line_horizontal)",
+        "reflect_horizontal(add(line_horizontal,square))"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 0,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 455,
+        "selection_cost_candidate_programs_tried": 0,
+        "solution_segmentations_evaluated": 28210,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6431.233333333334,
+        "mean_search_cost": 15858.74,
+        "solve_rate": 0.6,
+        "solved_count": 60,
+        "task_count": 100,
+        "unique_outputs": 8444
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 5316.0625,
+        "mean_search_cost": 14202.28,
+        "solve_rate": 0.64,
+        "solved_count": 16,
+        "task_count": 25,
+        "unique_outputs": 8444
+      }
+    },
+    "compression_on_matched_25_starter": {
+      "arm": "compression_on_matched_25_starter",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M00",
+          "M01",
+          "M04"
+        ],
+        "motif_match_count": 3,
+        "precision": 0.3,
+        "recall": 0.25,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+        "reflect_vertical(add(add(line_vertical,square),diagonal))",
+        "add(add(line_horizontal,square),diagonal)",
+        "add(diagonal,square)",
+        "reflect_vertical(add(line_vertical,square))",
+        "add(line_horizontal,square)",
+        "subtract(line_horizontal,line_vertical)",
+        "subtract(square,diagonal)",
+        "subtract(square,line_horizontal)",
+        "add(add(line_vertical,square),diagonal)"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 0,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 455,
+        "selection_cost_candidate_programs_tried": 0,
+        "solution_segmentations_evaluated": 7735,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 7268.879310344828,
+        "mean_search_cost": 16815.95,
+        "solve_rate": 0.58,
+        "solved_count": 58,
+        "task_count": 100,
+        "unique_outputs": 7499
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 3724.0666666666666,
+        "mean_search_cost": 14234.44,
+        "solve_rate": 0.6,
+        "solved_count": 15,
+        "task_count": 25,
+        "unique_outputs": 7499
+      }
+    },
+    "compression_on_validation_assisted": {
+      "arm": "compression_on_validation_assisted",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M01",
+          "M04"
+        ],
+        "motif_match_count": 2,
+        "precision": 0.2,
+        "recall": 0.16666666666666666,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "add(add(line_vertical,square),diagonal)",
+        "reflect_vertical(add(line_vertical,square))",
+        "subtract(square,diagonal)",
+        "add(line_horizontal,square)",
+        "overlap(diagonal,square)",
+        "overlap(line_horizontal,line_vertical)",
+        "subtract(line_horizontal,line_vertical)",
+        "add(add(line_horizontal,square),diagonal)",
+        "add(diagonal,line_horizontal)",
+        "add(diagonal,reflect_vertical(add(add(line_horizontal,line_vertical),square)))"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 0,
+        "input_solution_search_candidate_programs_tried": 881601,
+        "segmentation_evaluations": 455,
+        "selection_cost_candidate_programs_tried": 881601,
+        "solution_segmentations_evaluated": 8190,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 7245.338983050848,
+        "mean_search_cost": 16574.75,
+        "solve_rate": 0.59,
+        "solved_count": 59,
+        "task_count": 100,
+        "unique_outputs": 7280
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 4403.0,
+        "mean_search_cost": 14641.8,
+        "solve_rate": 0.6,
+        "solved_count": 15,
+        "task_count": 25,
+        "unique_outputs": 7280
+      }
+    },
+    "compression_on_validation_skip": {
+      "arm": "compression_on_validation_skip",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M00",
+          "M01"
+        ],
+        "motif_match_count": 2,
+        "precision": 0.2,
+        "recall": 0.16666666666666666,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "add(add(line_vertical,square),diagonal)",
+        "subtract(square,diagonal)",
+        "add(line_horizontal,square)",
+        "overlap(line_horizontal,line_vertical)",
+        "subtract(line_horizontal,line_vertical)",
+        "add(add(line_horizontal,square),diagonal)",
+        "add(diagonal,line_horizontal)",
+        "add(diagonal,reflect_vertical(add(add(line_horizontal,line_vertical),square)))",
+        "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+        "add(diagonal,square)"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 0,
+        "input_solution_search_candidate_programs_tried": 546820,
+        "segmentation_evaluations": 455,
+        "selection_cost_candidate_programs_tried": 546820,
+        "solution_segmentations_evaluated": 5915,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6789.254545454545,
+        "mean_search_cost": 17234.09,
+        "solve_rate": 0.55,
+        "solved_count": 55,
+        "task_count": 100,
+        "unique_outputs": 7267
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 4283.2307692307695,
+        "mean_search_cost": 16627.28,
+        "solve_rate": 0.52,
+        "solved_count": 13,
+        "task_count": 25,
+        "unique_outputs": 7267
+      }
+    },
+    "hidden_motif_oracle": {
+      "arm": "hidden_motif_oracle",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M00",
+          "M01",
+          "M02",
+          "M03",
+          "M04",
+          "M05",
+          "M07",
+          "M08",
+          "M10",
+          "M11"
+        ],
+        "motif_match_count": 10,
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "motif:M04",
+        "motif:M05",
+        "motif:M03",
+        "motif:M02",
+        "motif:M00",
+        "motif:M07",
+        "motif:M11",
+        "motif:M08",
+        "motif:M10",
+        "motif:M01"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 2250000,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 0,
+        "selection_cost_candidate_programs_tried": 2250000,
+        "solution_segmentations_evaluated": 0,
+        "trial_libraries_evaluated": 75
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6993.642105263158,
+        "mean_search_cost": 8143.96,
+        "solve_rate": 0.95,
+        "solved_count": 95,
+        "task_count": 100,
+        "unique_outputs": 10544
+      },
+      "validation_summary": null
+    },
+    "most_frequent_k": {
+      "arm": "most_frequent_k",
+      "motif_recovery": {
+        "matched_motif_ids": [],
+        "motif_match_count": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "invert(blank)",
+        "reflect_horizontal(overlap(diagonal,square))",
+        "invert(square)",
+        "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))",
+        "overlap(diagonal,square)",
+        "overlap(line_vertical,square)",
+        "invert(overlap(diagonal,square))",
+        "invert(overlap(line_horizontal,square))",
+        "invert(reflect_horizontal(subtract(square,diagonal)))",
+        "invert(reflect_vertical(overlap(line_horizontal,line_vertical)))"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 0,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 0,
+        "selection_cost_candidate_programs_tried": 0,
+        "solution_segmentations_evaluated": 0,
+        "trial_libraries_evaluated": 0
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6387.865384615385,
+        "mean_search_cost": 17721.69,
+        "solve_rate": 0.52,
+        "solved_count": 52,
+        "task_count": 100,
+        "unique_outputs": 4888
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6668.416666666667,
+        "mean_search_cost": 18800.84,
+        "solve_rate": 0.48,
+        "solved_count": 12,
+        "task_count": 25,
+        "unique_outputs": 4888
+      }
+    },
+    "primitives_only": {
+      "arm": "primitives_only",
+      "motif_recovery": {
+        "matched_motif_ids": [],
+        "motif_match_count": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "selected_count": 0
+      },
+      "selected_programs": [],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 0,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 0,
+        "selection_cost_candidate_programs_tried": 0,
+        "solution_segmentations_evaluated": 0,
+        "trial_libraries_evaluated": 0
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 5544.388888888889,
+        "mean_search_cost": 16793.97,
+        "solve_rate": 0.54,
+        "solved_count": 54,
+        "task_count": 100,
+        "unique_outputs": 7570
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 5531.461538461538,
+        "mean_search_cost": 17276.36,
+        "solve_rate": 0.52,
+        "solved_count": 13,
+        "task_count": 25,
+        "unique_outputs": 7570
+      }
+    },
+    "random_k": {
+      "draws": [
+        {
+          "arm": "random_00",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M09"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "subtract(square,add(diagonal,line_horizontal))",
+            "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+            "invert(reflect_vertical(overlap(line_horizontal,line_vertical)))",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))",
+            "subtract(line_horizontal,add(square,triangle))",
+            "reflect_horizontal(add(line_horizontal,square))",
+            "reflect_vertical(subtract(line_horizontal,add(square,triangle)))",
+            "add(add(line_vertical,square),diagonal)",
+            "invert(diagonal)",
+            "invert(square)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6205.728813559322,
+            "mean_search_cost": 15961.38,
+            "solve_rate": 0.59,
+            "solved_count": 59,
+            "task_count": 100,
+            "unique_outputs": 7593
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 3879.214285714286,
+            "mean_search_cost": 15372.36,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 7593
+          }
+        },
+        {
+          "arm": "random_01",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M01",
+              "M04"
+            ],
+            "motif_match_count": 2,
+            "precision": 0.2,
+            "recall": 0.16666666666666666,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(overlap(line_horizontal,square))",
+            "reflect_horizontal(add(diagonal,square))",
+            "subtract(line_horizontal,line_vertical)",
+            "invert(reflect_vertical(overlap(line_horizontal,line_vertical)))",
+            "reflect_vertical(add(line_vertical,square))",
+            "subtract(line_horizontal,overlap(square,triangle))",
+            "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+            "invert(add(line_horizontal,square))",
+            "overlap(diagonal,square)",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6400.728813559322,
+            "mean_search_cost": 16076.43,
+            "solve_rate": 0.59,
+            "solved_count": 59,
+            "task_count": 100,
+            "unique_outputs": 7228
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 3531.214285714286,
+            "mean_search_cost": 15177.48,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 7228
+          }
+        },
+        {
+          "arm": "random_02",
+          "motif_recovery": {
+            "matched_motif_ids": [],
+            "motif_match_count": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "overlap(diagonal,reflect_horizontal(line_horizontal))",
+            "invert(reflect_horizontal(add(diagonal,square)))",
+            "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))",
+            "overlap(line_horizontal,square)",
+            "reflect_horizontal(add(diagonal,square))",
+            "invert(diagonal)",
+            "subtract(square,diagonal)",
+            "reflect_horizontal(overlap(diagonal,square))",
+            "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+            "invert(reflect_horizontal(overlap(line_horizontal,line_vertical)))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 7145.62962962963,
+            "mean_search_cost": 17658.64,
+            "solve_rate": 0.54,
+            "solved_count": 54,
+            "task_count": 100,
+            "unique_outputs": 6718
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 5863.461538461538,
+            "mean_search_cost": 17449.0,
+            "solve_rate": 0.52,
+            "solved_count": 13,
+            "task_count": 25,
+            "unique_outputs": 6718
+          }
+        },
+        {
+          "arm": "random_03",
+          "motif_recovery": {
+            "matched_motif_ids": [],
+            "motif_match_count": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "subtract(square,line_horizontal)",
+            "invert(reflect_horizontal(add(diagonal,square)))",
+            "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))",
+            "reflect_vertical(subtract(line_horizontal,add(square,triangle)))",
+            "overlap(line_vertical,square)",
+            "invert(reflect_horizontal(overlap(line_horizontal,line_vertical)))",
+            "overlap(line_horizontal,line_vertical)",
+            "overlap(line_vertical,overlap(square,triangle))",
+            "invert(subtract(square,diagonal))",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6659.433962264151,
+            "mean_search_cost": 17629.5,
+            "solve_rate": 0.53,
+            "solved_count": 53,
+            "task_count": 100,
+            "unique_outputs": 7538
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 7475.416666666667,
+            "mean_search_cost": 19188.2,
+            "solve_rate": 0.48,
+            "solved_count": 12,
+            "task_count": 25,
+            "unique_outputs": 7538
+          }
+        },
+        {
+          "arm": "random_04",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M00"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(reflect_horizontal(add(diagonal,square)))",
+            "invert(add(line_horizontal,square))",
+            "invert(reflect_horizontal(line_horizontal))",
+            "overlap(line_vertical,square)",
+            "add(diagonal,square)",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "invert(subtract(square,diagonal))",
+            "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+            "subtract(square,line_horizontal)",
+            "overlap(diagonal,square)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 7392.462686567164,
+            "mean_search_cost": 14852.95,
+            "solve_rate": 0.67,
+            "solved_count": 67,
+            "task_count": 100,
+            "unique_outputs": 7925
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6085.5,
+            "mean_search_cost": 16607.88,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 7925
+          }
+        },
+        {
+          "arm": "random_05",
+          "motif_recovery": {
+            "matched_motif_ids": [],
+            "motif_match_count": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+            "add(add(line_vertical,square),diagonal)",
+            "invert(reflect_horizontal(add(diagonal,square)))",
+            "invert(subtract(square,diagonal))",
+            "invert(reflect_horizontal(line_horizontal))",
+            "invert(reflect_horizontal(overlap(line_horizontal,line_vertical)))",
+            "overlap(diagonal,square)",
+            "subtract(square,diagonal)",
+            "add(line_horizontal,square)",
+            "subtract(line_horizontal,add(square,triangle))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 8012.477611940299,
+            "mean_search_cost": 15268.36,
+            "solve_rate": 0.67,
+            "solved_count": 67,
+            "task_count": 100,
+            "unique_outputs": 8472
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6380.428571428572,
+            "mean_search_cost": 16773.04,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 8472
+          }
+        },
+        {
+          "arm": "random_06",
+          "motif_recovery": {
+            "matched_motif_ids": [],
+            "motif_match_count": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "add(diagonal,reflect_vertical(add(add(line_horizontal,line_vertical),square)))",
+            "invert(subtract(line_vertical,add(line_horizontal,square)))",
+            "invert(square)",
+            "subtract(line_horizontal,add(square,triangle))",
+            "invert(overlap(diagonal,square))",
+            "add(add(line_vertical,square),diagonal)",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "reflect_vertical(add(add(line_vertical,square),diagonal))",
+            "subtract(overlap(line_horizontal,square),triangle)",
+            "reflect_horizontal(add(diagonal,square))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 7211.428571428572,
+            "mean_search_cost": 18833.6,
+            "solve_rate": 0.49,
+            "solved_count": 49,
+            "task_count": 100,
+            "unique_outputs": 8910
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6389.0,
+            "mean_search_cost": 18666.72,
+            "solve_rate": 0.48,
+            "solved_count": 12,
+            "task_count": 25,
+            "unique_outputs": 8910
+          }
+        },
+        {
+          "arm": "random_07",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M01"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(blank)",
+            "overlap(line_vertical,square)",
+            "add(line_horizontal,square)",
+            "subtract(line_horizontal,line_vertical)",
+            "invert(overlap(diagonal,square))",
+            "reflect_vertical(add(add(line_vertical,square),diagonal))",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "invert(reflect_vertical(add(line_vertical,square)))",
+            "reflect_horizontal(add(diagonal,square))",
+            "reflect_horizontal(diagonal)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6895.032258064516,
+            "mean_search_cost": 15674.92,
+            "solve_rate": 0.62,
+            "solved_count": 62,
+            "task_count": 100,
+            "unique_outputs": 8332
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 5706.142857142857,
+            "mean_search_cost": 16395.44,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 8332
+          }
+        },
+        {
+          "arm": "random_08",
+          "motif_recovery": {
+            "matched_motif_ids": [],
+            "motif_match_count": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "reflect_horizontal(overlap(diagonal,square))",
+            "subtract(square,diagonal)",
+            "invert(square)",
+            "invert(subtract(square,diagonal))",
+            "invert(reflect_vertical(overlap(line_horizontal,line_vertical)))",
+            "invert(overlap(line_horizontal,square))",
+            "overlap(diagonal,square)",
+            "reflect_vertical(add(add(line_horizontal,line_vertical),square))",
+            "add(diagonal,line_horizontal)",
+            "add(line_horizontal,square)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6363.559322033899,
+            "mean_search_cost": 16054.5,
+            "solve_rate": 0.59,
+            "solved_count": 59,
+            "task_count": 100,
+            "unique_outputs": 6703
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 4948.333333333333,
+            "mean_search_cost": 17975.2,
+            "solve_rate": 0.48,
+            "solved_count": 12,
+            "task_count": 25,
+            "unique_outputs": 6703
+          }
+        },
+        {
+          "arm": "random_09",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M04",
+              "M09"
+            ],
+            "motif_match_count": 2,
+            "precision": 0.2,
+            "recall": 0.16666666666666666,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "reflect_horizontal(add(line_horizontal,square))",
+            "invert(overlap(line_horizontal,overlap(square,triangle)))",
+            "invert(reflect_vertical(line_vertical))",
+            "add(add(line_horizontal,square),diagonal)",
+            "invert(reflect_horizontal(line_horizontal))",
+            "invert(add(line_horizontal,square))",
+            "invert(blank)",
+            "reflect_vertical(subtract(square,line_vertical))",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))",
+            "reflect_vertical(add(line_vertical,square))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6854.016393442623,
+            "mean_search_cost": 15880.95,
+            "solve_rate": 0.61,
+            "solved_count": 61,
+            "task_count": 100,
+            "unique_outputs": 9076
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6605.882352941177,
+            "mean_search_cost": 14092.0,
+            "solve_rate": 0.68,
+            "solved_count": 17,
+            "task_count": 25,
+            "unique_outputs": 9076
+          }
+        },
+        {
+          "arm": "random_10",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M00",
+              "M09"
+            ],
+            "motif_match_count": 2,
+            "precision": 0.2,
+            "recall": 0.16666666666666666,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "add(diagonal,square)",
+            "invert(subtract(square,diagonal))",
+            "overlap(diagonal,reflect_horizontal(line_horizontal))",
+            "reflect_horizontal(add(line_horizontal,square))",
+            "reflect_vertical(subtract(square,line_vertical))",
+            "invert(reflect_horizontal(add(diagonal,square)))",
+            "invert(diagonal)",
+            "reflect_horizontal(diagonal)",
+            "add(diagonal,reflect_vertical(add(add(line_horizontal,line_vertical),square)))",
+            "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6279.274193548387,
+            "mean_search_cost": 15293.15,
+            "solve_rate": 0.62,
+            "solved_count": 62,
+            "task_count": 100,
+            "unique_outputs": 8559
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6470.6875,
+            "mean_search_cost": 14941.24,
+            "solve_rate": 0.64,
+            "solved_count": 16,
+            "task_count": 25,
+            "unique_outputs": 8559
+          }
+        },
+        {
+          "arm": "random_11",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M00"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "reflect_horizontal(diagonal)",
+            "overlap(diagonal,reflect_horizontal(line_horizontal))",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))",
+            "subtract(square,line_horizontal)",
+            "invert(reflect_vertical(overlap(line_horizontal,line_vertical)))",
+            "invert(overlap(line_horizontal,square))",
+            "invert(reflect_horizontal(overlap(line_horizontal,line_vertical)))",
+            "add(diagonal,square)",
+            "invert(reflect_horizontal(subtract(square,diagonal)))",
+            "invert(add(line_horizontal,square))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6506.5,
+            "mean_search_cost": 16373.77,
+            "solve_rate": 0.58,
+            "solved_count": 58,
+            "task_count": 100,
+            "unique_outputs": 7605
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 5281.615384615385,
+            "mean_search_cost": 17146.44,
+            "solve_rate": 0.52,
+            "solved_count": 13,
+            "task_count": 25,
+            "unique_outputs": 7605
+          }
+        },
+        {
+          "arm": "random_12",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M00"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+            "reflect_horizontal(diagonal)",
+            "add(diagonal,square)",
+            "invert(blank)",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "invert(diagonal)",
+            "reflect_vertical(add(overlap(line_horizontal,line_vertical),square))",
+            "invert(reflect_horizontal(subtract(square,diagonal)))",
+            "reflect_horizontal(overlap(diagonal,square))",
+            "invert(add(line_horizontal,square))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6274.1016949152545,
+            "mean_search_cost": 16001.72,
+            "solve_rate": 0.59,
+            "solved_count": 59,
+            "task_count": 100,
+            "unique_outputs": 7751
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 3192.4615384615386,
+            "mean_search_cost": 16060.08,
+            "solve_rate": 0.52,
+            "solved_count": 13,
+            "task_count": 25,
+            "unique_outputs": 7751
+          }
+        },
+        {
+          "arm": "random_13",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M00"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(reflect_vertical(overlap(line_horizontal,line_vertical)))",
+            "add(diagonal,reflect_vertical(add(add(line_horizontal,line_vertical),square)))",
+            "invert(diagonal)",
+            "subtract(overlap(line_horizontal,square),triangle)",
+            "add(diagonal,square)",
+            "invert(reflect_horizontal(subtract(square,diagonal)))",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "add(add(line_vertical,square),diagonal)",
+            "overlap(line_horizontal,line_vertical)",
+            "subtract(square,line_horizontal)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6902.037037037037,
+            "mean_search_cost": 17527.1,
+            "solve_rate": 0.54,
+            "solved_count": 54,
+            "task_count": 100,
+            "unique_outputs": 7393
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 2450.0833333333335,
+            "mean_search_cost": 16776.04,
+            "solve_rate": 0.48,
+            "solved_count": 12,
+            "task_count": 25,
+            "unique_outputs": 7393
+          }
+        },
+        {
+          "arm": "random_14",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M01"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "reflect_horizontal(add(diagonal,square))",
+            "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))",
+            "subtract(line_horizontal,line_vertical)",
+            "subtract(square,diagonal)",
+            "invert(blank)",
+            "overlap(line_horizontal,square)",
+            "reflect_horizontal(diagonal)",
+            "invert(reflect_vertical(line_vertical))",
+            "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+            "overlap(diagonal,square)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 7210.533333333334,
+            "mean_search_cost": 16326.32,
+            "solve_rate": 0.6,
+            "solved_count": 60,
+            "task_count": 100,
+            "unique_outputs": 7922
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 3997.4615384615386,
+            "mean_search_cost": 16478.68,
+            "solve_rate": 0.52,
+            "solved_count": 13,
+            "task_count": 25,
+            "unique_outputs": 7922
+          }
+        },
+        {
+          "arm": "random_15",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M04"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(overlap(line_horizontal,overlap(square,triangle)))",
+            "add(line_horizontal,square)",
+            "invert(add(line_horizontal,square))",
+            "reflect_vertical(overlap(line_horizontal,line_vertical))",
+            "reflect_vertical(add(line_vertical,square))",
+            "overlap(line_horizontal,line_vertical)",
+            "add(add(line_vertical,square),diagonal)",
+            "reflect_horizontal(overlap(diagonal,square))",
+            "subtract(overlap(line_horizontal,square),triangle)",
+            "invert(diagonal)"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 8570.819672131147,
+            "mean_search_cost": 16928.2,
+            "solve_rate": 0.61,
+            "solved_count": 61,
+            "task_count": 100,
+            "unique_outputs": 7167
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 3653.9333333333334,
+            "mean_search_cost": 14192.36,
+            "solve_rate": 0.6,
+            "solved_count": 15,
+            "task_count": 25,
+            "unique_outputs": 7167
+          }
+        },
+        {
+          "arm": "random_16",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M00"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(reflect_horizontal(subtract(square,diagonal)))",
+            "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))",
+            "reflect_vertical(subtract(line_horizontal,add(square,triangle)))",
+            "invert(square)",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "reflect_horizontal(overlap(diagonal,square))",
+            "subtract(line_horizontal,overlap(square,triangle))",
+            "invert(reflect_vertical(add(line_vertical,square)))",
+            "add(diagonal,square)",
+            "subtract(line_horizontal,add(square,triangle))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6871.033898305085,
+            "mean_search_cost": 16353.91,
+            "solve_rate": 0.59,
+            "solved_count": 59,
+            "task_count": 100,
+            "unique_outputs": 7842
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6025.142857142857,
+            "mean_search_cost": 16574.08,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 7842
+          }
+        },
+        {
+          "arm": "random_17",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M07"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "invert(reflect_vertical(line_vertical))",
+            "invert(reflect_horizontal(line_horizontal))",
+            "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+            "reflect_horizontal(add(diagonal,square))",
+            "invert(overlap(line_horizontal,square))",
+            "invert(reflect_horizontal(subtract(square,diagonal)))",
+            "add(add(line_vertical,square),diagonal)",
+            "invert(subtract(square,diagonal))",
+            "reflect_vertical(subtract(line_horizontal,add(square,triangle)))",
+            "reflect_horizontal(subtract(square,diagonal))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 8295.695652173914,
+            "mean_search_cost": 15024.03,
+            "solve_rate": 0.69,
+            "solved_count": 69,
+            "task_count": 100,
+            "unique_outputs": 8505
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6295.533333333334,
+            "mean_search_cost": 15777.32,
+            "solve_rate": 0.6,
+            "solved_count": 15,
+            "task_count": 25,
+            "unique_outputs": 8505
+          }
+        },
+        {
+          "arm": "random_18",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M01"
+            ],
+            "motif_match_count": 1,
+            "precision": 0.1,
+            "recall": 0.08333333333333333,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "reflect_vertical(add(add(line_vertical,square),diagonal))",
+            "subtract(line_horizontal,line_vertical)",
+            "add(line_horizontal,square)",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "subtract(line_horizontal,add(square,triangle))",
+            "reflect_vertical(subtract(square,line_vertical))",
+            "invert(subtract(square,diagonal))",
+            "reflect_horizontal(overlap(diagonal,square))",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))",
+            "invert(overlap(diagonal,square))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6862.573770491803,
+            "mean_search_cost": 15886.17,
+            "solve_rate": 0.61,
+            "solved_count": 61,
+            "task_count": 100,
+            "unique_outputs": 8433
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6124.642857142857,
+            "mean_search_cost": 16629.8,
+            "solve_rate": 0.56,
+            "solved_count": 14,
+            "task_count": 25,
+            "unique_outputs": 8433
+          }
+        },
+        {
+          "arm": "random_19",
+          "motif_recovery": {
+            "matched_motif_ids": [
+              "M04",
+              "M07"
+            ],
+            "motif_match_count": 2,
+            "precision": 0.2,
+            "recall": 0.16666666666666666,
+            "selected_count": 10
+          },
+          "selected_programs": [
+            "reflect_horizontal(subtract(square,diagonal))",
+            "invert(diagonal)",
+            "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+            "invert(reflect_vertical(line_vertical))",
+            "subtract(square,add(diagonal,line_horizontal))",
+            "reflect_vertical(add(line_vertical,square))",
+            "invert(subtract(square,diagonal))",
+            "add(diagonal,line_horizontal)",
+            "invert(reflect_horizontal(overlap(line_horizontal,line_vertical)))",
+            "invert(reflect_vertical(subtract(line_horizontal,add(line_vertical,square))))"
+          ],
+          "selection_cost": {
+            "frontier_candidates_tried_total": 0,
+            "input_solution_search_candidate_programs_tried": 0,
+            "segmentation_evaluations": 0,
+            "selection_cost_candidate_programs_tried": 0,
+            "solution_segmentations_evaluated": 0,
+            "trial_libraries_evaluated": 0
+          },
+          "summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 6147.0615384615385,
+            "mean_search_cost": 14495.59,
+            "solve_rate": 0.65,
+            "solved_count": 65,
+            "task_count": 100,
+            "unique_outputs": 8822
+          },
+          "validation_summary": {
+            "frontier_candidates_tried_total": 30000,
+            "hit_budget": true,
+            "mean_first_solution_cost": 7668.833333333333,
+            "mean_search_cost": 13921.56,
+            "solve_rate": 0.72,
+            "solved_count": 18,
+            "task_count": 25,
+            "unique_outputs": 8822
+          }
+        }
+      ],
+      "median_solved_count": 59.5
+    },
+    "utility_on_matched_25_starter": {
+      "arm": "utility_on_matched_25_starter",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M00"
+        ],
+        "motif_match_count": 1,
+        "precision": 0.1,
+        "recall": 0.08333333333333333,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "invert(reflect_vertical(line_vertical))",
+        "add(diagonal,square)",
+        "reflect_vertical(subtract(square,line_vertical))",
+        "invert(overlap(diagonal,reflect_horizontal(line_horizontal)))",
+        "invert(reflect_vertical(add(line_vertical,square)))",
+        "overlap(line_horizontal,line_vertical)",
+        "overlap(line_vertical,overlap(square,triangle))",
+        "invert(subtract(square,diagonal))",
+        "invert(blank)",
+        "overlap(line_horizontal,square)"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 13650000,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 0,
+        "selection_cost_candidate_programs_tried": 13650000,
+        "solution_segmentations_evaluated": 0,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 5929.741935483871,
+        "mean_search_cost": 15076.44,
+        "solve_rate": 0.62,
+        "solved_count": 62,
+        "task_count": 100,
+        "unique_outputs": 6743
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 4693.0,
+        "mean_search_cost": 15828.08,
+        "solve_rate": 0.56,
+        "solved_count": 14,
+        "task_count": 25,
+        "unique_outputs": 6743
+      }
+    },
+    "utility_on_validation": {
+      "arm": "utility_on_validation",
+      "motif_recovery": {
+        "matched_motif_ids": [
+          "M04",
+          "M09"
+        ],
+        "motif_match_count": 2,
+        "precision": 0.2,
+        "recall": 0.16666666666666666,
+        "selected_count": 10
+      },
+      "selected_programs": [
+        "reflect_horizontal(add(line_horizontal,square))",
+        "add(diagonal,reflect_vertical(add(line_vertical,square)))",
+        "reflect_vertical(add(line_vertical,square))",
+        "invert(reflect_horizontal(subtract(square,diagonal)))",
+        "invert(reflect_horizontal(line_horizontal))",
+        "reflect_horizontal(overlap(diagonal,square))",
+        "reflect_vertical(subtract(square,line_vertical))",
+        "reflect_vertical(overlap(line_horizontal,line_vertical))",
+        "reflect_vertical(add(add(line_horizontal,line_vertical),square))",
+        "invert(blank)"
+      ],
+      "selection_cost": {
+        "frontier_candidates_tried_total": 13650000,
+        "input_solution_search_candidate_programs_tried": 0,
+        "segmentation_evaluations": 0,
+        "selection_cost_candidate_programs_tried": 13650000,
+        "solution_segmentations_evaluated": 0,
+        "trial_libraries_evaluated": 455
+      },
+      "summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6142.31884057971,
+        "mean_search_cost": 13538.2,
+        "solve_rate": 0.69,
+        "solved_count": 69,
+        "task_count": 100,
+        "unique_outputs": 9421
+      },
+      "validation_summary": {
+        "frontier_candidates_tried_total": 30000,
+        "hit_budget": true,
+        "mean_first_solution_cost": 6692.857142857143,
+        "mean_search_cost": 10422.0,
+        "solve_rate": 0.84,
+        "solved_count": 21,
+        "task_count": 25,
+        "unique_outputs": 9421
+      }
+    }
+  },
+  "c_delta": 26,
+  "capture_ratio": 0.6341463414634146,
+  "compression_input_diagnostics": {
+    "all_100_starter": {
+      "candidate_programs_tried_total": 2240307,
+      "canonical_solution_count": 62,
+      "solution_program_count_before_canonicalization": 155,
+      "solved_task_count": 62
+    },
+    "matched_25_starter": {
+      "candidate_programs_tried_total": 569701,
+      "canonical_solution_count": 17,
+      "solution_program_count_before_canonicalization": 42,
+      "solved_task_count": 17
+    },
+    "validation_assisted": {
+      "candidate_programs_tried_total": 881601,
+      "canonical_solution_count": 18,
+      "solution_program_count_before_canonicalization": 18,
+      "solve_config": {
+        "max_program_size": 7,
+        "max_solutions": 1,
+        "node_budget": 90000
+      },
+      "solved_task_count": 18
+    },
+    "validation_skip": {
+      "candidate_programs_tried_total": 546820,
+      "canonical_solution_count": 13,
+      "solution_program_count_before_canonicalization": 34,
+      "solved_task_count": 13
+    }
+  },
+  "condition": "reversed_a05",
+  "experiment_name": "full_selection_experiment_primary_k10",
+  "formal_seed": true,
+  "k": 10,
+  "matched_starter_solved_count": 17,
+  "matched_starter_task_ids": [
+    "start_026",
+    "start_083",
+    "start_046",
+    "start_071",
+    "start_098",
+    "start_023",
+    "start_082",
+    "start_085",
+    "start_060",
+    "start_096",
+    "start_008",
+    "start_092",
+    "start_004",
+    "start_077",
+    "start_050",
+    "start_014",
+    "start_011",
+    "start_030",
+    "start_028",
+    "start_025",
+    "start_058",
+    "start_029",
+    "start_041",
+    "start_040",
+    "start_074"
+  ],
+  "menu": {
+    "frontier_candidates_tried_total": 30000,
+    "frontier_hit_budget": true,
+    "frontier_unique_outputs": 7570,
+    "menu_size": 50,
+    "op_count_distribution": {
+      "1": 14,
+      "2": 21,
+      "3": 13,
+      "4": 2
+    },
+    "raw_candidate_count": 7564,
+    "support_distribution": {
+      "10": 7,
+      "11": 7,
+      "12": 6,
+      "14": 3,
+      "16": 1,
+      "17": 1,
+      "56": 1,
+      "7": 1,
+      "8": 17,
+      "9": 6
+    }
+  },
+  "motif_oracle_delta": 41,
+  "random_draws": 20,
+  "seed": 6490,
+  "selected_set_overlap": {
+    "best_k_from_c_oracle|hidden_motif_oracle": 0,
+    "compression_on_all_100_starter|best_k_from_c_oracle": 2,
+    "compression_on_all_100_starter|hidden_motif_oracle": 0,
+    "compression_on_matched_25_starter|best_k_from_c_oracle": 3,
+    "compression_on_matched_25_starter|compression_on_all_100_starter": 8,
+    "compression_on_matched_25_starter|compression_on_validation_assisted": 6,
+    "compression_on_matched_25_starter|compression_on_validation_skip": 6,
+    "compression_on_matched_25_starter|hidden_motif_oracle": 0,
+    "compression_on_matched_25_starter|utility_on_matched_25_starter": 1,
+    "compression_on_matched_25_starter|utility_on_validation": 1,
+    "compression_on_validation_assisted|best_k_from_c_oracle": 3,
+    "compression_on_validation_assisted|compression_on_all_100_starter": 4,
+    "compression_on_validation_assisted|hidden_motif_oracle": 0,
+    "compression_on_validation_assisted|utility_on_validation": 1,
+    "compression_on_validation_skip|best_k_from_c_oracle": 2,
+    "compression_on_validation_skip|compression_on_all_100_starter": 5,
+    "compression_on_validation_skip|compression_on_validation_assisted": 8,
+    "compression_on_validation_skip|hidden_motif_oracle": 0,
+    "compression_on_validation_skip|utility_on_validation": 1,
+    "most_frequent_k|best_k_from_c_oracle": 1,
+    "most_frequent_k|compression_on_all_100_starter": 0,
+    "most_frequent_k|compression_on_matched_25_starter": 0,
+    "most_frequent_k|compression_on_validation_assisted": 1,
+    "most_frequent_k|compression_on_validation_skip": 0,
+    "most_frequent_k|hidden_motif_oracle": 0,
+    "most_frequent_k|utility_on_matched_25_starter": 2,
+    "most_frequent_k|utility_on_validation": 3,
+    "primitives_only|best_k_from_c_oracle": 0,
+    "primitives_only|compression_on_all_100_starter": 0,
+    "primitives_only|compression_on_matched_25_starter": 0,
+    "primitives_only|compression_on_validation_assisted": 0,
+    "primitives_only|compression_on_validation_skip": 0,
+    "primitives_only|hidden_motif_oracle": 0,
+    "primitives_only|most_frequent_k": 0,
+    "primitives_only|utility_on_matched_25_starter": 0,
+    "primitives_only|utility_on_validation": 0,
+    "utility_on_matched_25_starter|best_k_from_c_oracle": 3,
+    "utility_on_matched_25_starter|compression_on_all_100_starter": 1,
+    "utility_on_matched_25_starter|compression_on_validation_assisted": 1,
+    "utility_on_matched_25_starter|compression_on_validation_skip": 2,
+    "utility_on_matched_25_starter|hidden_motif_oracle": 0,
+    "utility_on_matched_25_starter|utility_on_validation": 2,
+    "utility_on_validation|best_k_from_c_oracle": 3,
+    "utility_on_validation|compression_on_all_100_starter": 2,
+    "utility_on_validation|hidden_motif_oracle": 0
+  },
+  "validation_skip_solved_count": 13,
+  "validation_test_pairs": [
+    {
+      "arm": "random_00",
+      "test_solved_count": 59,
+      "test_solved_gain": 5,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_01",
+      "test_solved_count": 59,
+      "test_solved_gain": 5,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_02",
+      "test_solved_count": 54,
+      "test_solved_gain": 0,
+      "validation_solved_count": 13,
+      "validation_solved_gain": 0
+    },
+    {
+      "arm": "random_03",
+      "test_solved_count": 53,
+      "test_solved_gain": -1,
+      "validation_solved_count": 12,
+      "validation_solved_gain": -1
+    },
+    {
+      "arm": "random_04",
+      "test_solved_count": 67,
+      "test_solved_gain": 13,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_05",
+      "test_solved_count": 67,
+      "test_solved_gain": 13,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_06",
+      "test_solved_count": 49,
+      "test_solved_gain": -5,
+      "validation_solved_count": 12,
+      "validation_solved_gain": -1
+    },
+    {
+      "arm": "random_07",
+      "test_solved_count": 62,
+      "test_solved_gain": 8,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_08",
+      "test_solved_count": 59,
+      "test_solved_gain": 5,
+      "validation_solved_count": 12,
+      "validation_solved_gain": -1
+    },
+    {
+      "arm": "random_09",
+      "test_solved_count": 61,
+      "test_solved_gain": 7,
+      "validation_solved_count": 17,
+      "validation_solved_gain": 4
+    },
+    {
+      "arm": "random_10",
+      "test_solved_count": 62,
+      "test_solved_gain": 8,
+      "validation_solved_count": 16,
+      "validation_solved_gain": 3
+    },
+    {
+      "arm": "random_11",
+      "test_solved_count": 58,
+      "test_solved_gain": 4,
+      "validation_solved_count": 13,
+      "validation_solved_gain": 0
+    },
+    {
+      "arm": "random_12",
+      "test_solved_count": 59,
+      "test_solved_gain": 5,
+      "validation_solved_count": 13,
+      "validation_solved_gain": 0
+    },
+    {
+      "arm": "random_13",
+      "test_solved_count": 54,
+      "test_solved_gain": 0,
+      "validation_solved_count": 12,
+      "validation_solved_gain": -1
+    },
+    {
+      "arm": "random_14",
+      "test_solved_count": 60,
+      "test_solved_gain": 6,
+      "validation_solved_count": 13,
+      "validation_solved_gain": 0
+    },
+    {
+      "arm": "random_15",
+      "test_solved_count": 61,
+      "test_solved_gain": 7,
+      "validation_solved_count": 15,
+      "validation_solved_gain": 2
+    },
+    {
+      "arm": "random_16",
+      "test_solved_count": 59,
+      "test_solved_gain": 5,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_17",
+      "test_solved_count": 69,
+      "test_solved_gain": 15,
+      "validation_solved_count": 15,
+      "validation_solved_gain": 2
+    },
+    {
+      "arm": "random_18",
+      "test_solved_count": 61,
+      "test_solved_gain": 7,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "random_19",
+      "test_solved_count": 65,
+      "test_solved_gain": 11,
+      "validation_solved_count": 18,
+      "validation_solved_gain": 5
+    },
+    {
+      "arm": "most_frequent_k",
+      "test_solved_count": 52,
+      "test_solved_gain": -2,
+      "validation_solved_count": 12,
+      "validation_solved_gain": -1
+    },
+    {
+      "arm": "compression_on_matched_25_starter",
+      "test_solved_count": 58,
+      "test_solved_gain": 4,
+      "validation_solved_count": 15,
+      "validation_solved_gain": 2
+    },
+    {
+      "arm": "utility_on_matched_25_starter",
+      "test_solved_count": 62,
+      "test_solved_gain": 8,
+      "validation_solved_count": 14,
+      "validation_solved_gain": 1
+    },
+    {
+      "arm": "compression_on_validation_skip",
+      "test_solved_count": 55,
+      "test_solved_gain": 1,
+      "validation_solved_count": 13,
+      "validation_solved_gain": 0
+    },
+    {
+      "arm": "compression_on_validation_assisted",
+      "test_solved_count": 59,
+      "test_solved_gain": 5,
+      "validation_solved_count": 15,
+      "validation_solved_gain": 2
+    },
+    {
+      "arm": "utility_on_validation",
+      "test_solved_count": 69,
+      "test_solved_gain": 15,
+      "validation_solved_count": 21,
+      "validation_solved_gain": 8
+    },
+    {
+      "arm": "compression_on_all_100_starter",
+      "test_solved_count": 60,
+      "test_solved_gain": 6,
+      "validation_solved_count": 16,
+      "validation_solved_gain": 3
+    },
+    {
+      "arm": "best_k_from_c_oracle",
+      "test_solved_count": 80,
+      "test_solved_gain": 26,
+      "validation_solved_count": 19,
+      "validation_solved_gain": 6
+    }
+  ],
+  "wall_clock_seconds": 62.29,
+  "world_metadata": {
+    "density_summary": {
+      "start": {
+        "max": 84,
+        "mean": 39.61,
+        "min": 3
+      },
+      "test": {
+        "max": 84,
+        "mean": 41.29,
+        "min": 3
+      },
+      "val": {
+        "max": 84,
+        "mean": 42.52,
+        "min": 3
+      }
+    },
+    "expected_motif_length": {
+      "p_start": 3.0203713852989216,
+      "p_test": 3.0203713852989216,
+      "p_val": 3.0203713852989216
+    },
+    "realized_rho": {
+      "realized_start_test": 0.09187508587279312,
+      "realized_start_val": 0.2684080852345887,
+      "realized_val_test": 0.19015030812416608
+    }
+  }
+}

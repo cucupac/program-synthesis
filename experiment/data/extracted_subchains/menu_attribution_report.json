@@ -1,0 +1,478 @@
+{
+  "by_condition": {
+    "reversed_a0": {
+      "cell_count": 3,
+      "failed_cell_count": 2,
+      "interpretation_counts": {
+        "missed_available_structure": 1,
+        "near_miss_threshold_artifact": 1,
+        "strong_menu_cell": 1
+      },
+      "low_capture_fraction": 0.3333333333333333,
+      "mean_c_solved_delta": 9.666666666666666,
+      "mean_motif_ceiling_delta": 27.333333333333332,
+      "median_capture_ratio": 0.4857142857142857
+    },
+    "reversed_a1": {
+      "cell_count": 3,
+      "failed_cell_count": 0,
+      "interpretation_counts": {
+        "strong_menu_cell": 3
+      },
+      "low_capture_fraction": 0.0,
+      "mean_c_solved_delta": 16.333333333333332,
+      "mean_motif_ceiling_delta": 27.0,
+      "median_capture_ratio": 0.64
+    }
+  },
+  "cells": [
+    {
+      "best_k_from_c_solved_count": 66,
+      "c_solved_delta": 9,
+      "capture_ratio": 0.6,
+      "condition": "reversed_a0",
+      "cost_reductions": {
+        "best_1_from_c": -0.05989255260445408,
+        "best_k_from_c": 0.19803755950944474,
+        "hidden_motif_oracle": 0.20018440733531392
+      },
+      "endpoint_pass": false,
+      "gate": "Gate 2",
+      "hidden_motif_oracle_solved_count": 72,
+      "interpretation": "near_miss_threshold_artifact",
+      "menu": {
+        "candidate_count": 50,
+        "candidate_pool_fraction_of_reached_unique_outputs": 0.9992073976221929,
+        "frontier_candidate_pool_count": 7564,
+        "hit_budget": true,
+        "op_count_3_count": 10,
+        "op_count_4_count": 0,
+        "raw_frontier_candidate_pool_count": 7564,
+        "recipe": "frontier_promotion",
+        "size_distribution": {
+          "1": 17,
+          "2": 23,
+          "3": 10
+        },
+        "support_distribution": {
+          "10": 13,
+          "11": 9,
+          "12": 4,
+          "15": 1,
+          "16": 1,
+          "17": 1,
+          "52": 1,
+          "8": 7,
+          "9": 13
+        },
+        "unique_outputs": 7570
+      },
+      "motif_ceiling_delta": 15,
+      "oracle_k": 5,
+      "primitive_solved_count": 57,
+      "routes": {
+        "cost_route_pass": false,
+        "solve_count_route_pass": false
+      },
+      "seed": 6460,
+      "source": "experiment/data/extracted_subchains/candidate_menu_diagnostics.json",
+      "thresholds": {
+        "noise_3n": 10.816653826391967,
+        "noise_n": 3.605551275463989,
+        "solved_delta_threshold": 10.816653826391967
+      }
+    },
+    {
+      "best_k_from_c_solved_count": 70,
+      "c_solved_delta": 16,
+      "capture_ratio": 0.64,
+      "condition": "reversed_a1",
+      "cost_reductions": {
+        "best_1_from_c": -0.0735996739302723,
+        "best_k_from_c": 0.38516162558802,
+        "hidden_motif_oracle": 0.275932553949569
+      },
+      "endpoint_pass": true,
+      "gate": "Gate 2",
+      "hidden_motif_oracle_solved_count": 79,
+      "interpretation": "strong_menu_cell",
+      "menu": {
+        "candidate_count": 50,
+        "candidate_pool_fraction_of_reached_unique_outputs": 0.9992073976221929,
+        "frontier_candidate_pool_count": 7564,
+        "hit_budget": true,
+        "op_count_3_count": 10,
+        "op_count_4_count": 0,
+        "raw_frontier_candidate_pool_count": 7564,
+        "recipe": "frontier_promotion",
+        "size_distribution": {
+          "1": 17,
+          "2": 23,
+          "3": 10
+        },
+        "support_distribution": {
+          "10": 13,
+          "11": 9,
+          "12": 4,
+          "15": 1,
+          "16": 1,
+          "17": 1,
+          "52": 1,
+          "8": 7,
+          "9": 13
+        },
+        "unique_outputs": 7570
+      },
+      "motif_ceiling_delta": 25,
+      "oracle_k": 5,
+      "primitive_solved_count": 54,
+      "routes": {
+        "cost_route_pass": true,
+        "solve_count_route_pass": true
+      },
+      "seed": 6460,
+      "source": "experiment/data/extracted_subchains/candidate_menu_diagnostics.json",
+      "thresholds": {
+        "noise_3n": 13.527749258468683,
+        "noise_n": 4.509249752822894,
+        "solved_delta_threshold": 13.527749258468683
+      }
+    },
+    {
+      "best_k_from_c_solved_count": 61,
+      "c_solved_delta": 3,
+      "capture_ratio": 0.09375,
+      "condition": "reversed_a0",
+      "cost_reductions": {
+        "best_1_from_c": -0.1729203480609379,
+        "best_k_from_c": 0.06813028845708931,
+        "hidden_motif_oracle": 0.5748307554564807
+      },
+      "endpoint_pass": false,
+      "gate": "Gate 3",
+      "hidden_motif_oracle_solved_count": 90,
+      "interpretation": "missed_available_structure",
+      "menu": {
+        "candidate_count": 50,
+        "candidate_pool_fraction_of_reached_unique_outputs": 0.9992073976221929,
+        "frontier_candidate_pool_count": 7564,
+        "hit_budget": true,
+        "op_count_3_count": 4,
+        "op_count_4_count": 0,
+        "raw_frontier_candidate_pool_count": 7564,
+        "recipe": "frontier_promotion",
+        "size_distribution": {
+          "1": 17,
+          "2": 29,
+          "3": 4
+        },
+        "support_distribution": {
+          "10": 9,
+          "11": 3,
+          "12": 1,
+          "20": 1,
+          "59": 1,
+          "7": 18,
+          "8": 14,
+          "9": 3
+        },
+        "unique_outputs": 7570
+      },
+      "motif_ceiling_delta": 32,
+      "oracle_k": 10,
+      "primitive_solved_count": 58,
+      "routes": {
+        "cost_route_pass": false,
+        "solve_count_route_pass": false
+      },
+      "seed": 6463,
+      "source": "experiment/data/extracted_subchains/gate3_candidate_menu_diagnostics.json",
+      "thresholds": {
+        "noise_3n": 10.954451150103322,
+        "noise_n": 3.6514837167011076,
+        "solved_delta_threshold": 10.954451150103322
+      }
+    },
+    {
+      "best_k_from_c_solved_count": 79,
+      "c_solved_delta": 12,
+      "capture_ratio": 0.4444444444444444,
+      "condition": "reversed_a1",
+      "cost_reductions": {
+        "best_1_from_c": -0.36955482350241214,
+        "best_k_from_c": -0.1940660839377595,
+        "hidden_motif_oracle": 0.47338416713160997
+      },
+      "endpoint_pass": true,
+      "gate": "Gate 3",
+      "hidden_motif_oracle_solved_count": 94,
+      "interpretation": "strong_menu_cell",
+      "menu": {
+        "candidate_count": 50,
+        "candidate_pool_fraction_of_reached_unique_outputs": 0.9992073976221929,
+        "frontier_candidate_pool_count": 7564,
+        "hit_budget": true,
+        "op_count_3_count": 4,
+        "op_count_4_count": 0,
+        "raw_frontier_candidate_pool_count": 7564,
+        "recipe": "frontier_promotion",
+        "size_distribution": {
+          "1": 17,
+          "2": 29,
+          "3": 4
+        },
+        "support_distribution": {
+          "10": 9,
+          "11": 3,
+          "12": 1,
+          "20": 1,
+          "59": 1,
+          "7": 18,
+          "8": 14,
+          "9": 3
+        },
+        "unique_outputs": 7570
+      },
+      "motif_ceiling_delta": 27,
+      "oracle_k": 10,
+      "primitive_solved_count": 67,
+      "routes": {
+        "cost_route_pass": false,
+        "solve_count_route_pass": true
+      },
+      "seed": 6463,
+      "source": "experiment/data/extracted_subchains/gate3_candidate_menu_diagnostics.json",
+      "thresholds": {
+        "noise_3n": 10.781929326423912,
+        "noise_n": 3.593976442141304,
+        "solved_delta_threshold": 10.781929326423912
+      }
+    },
+    {
+      "best_k_from_c_solved_count": 73,
+      "c_solved_delta": 17,
+      "capture_ratio": 0.4857142857142857,
+      "condition": "reversed_a0",
+      "cost_reductions": {
+        "best_1_from_c": -0.2566024304672802,
+        "best_k_from_c": 0.13878635182906587,
+        "hidden_motif_oracle": 0.5366595918066674
+      },
+      "endpoint_pass": true,
+      "gate": "Gate 3",
+      "hidden_motif_oracle_solved_count": 91,
+      "interpretation": "strong_menu_cell",
+      "menu": {
+        "candidate_count": 50,
+        "candidate_pool_fraction_of_reached_unique_outputs": 0.9992073976221929,
+        "frontier_candidate_pool_count": 7564,
+        "hit_budget": true,
+        "op_count_3_count": 10,
+        "op_count_4_count": 0,
+        "raw_frontier_candidate_pool_count": 7564,
+        "recipe": "frontier_promotion",
+        "size_distribution": {
+          "1": 14,
+          "2": 26,
+          "3": 10
+        },
+        "support_distribution": {
+          "10": 13,
+          "11": 7,
+          "12": 4,
+          "13": 1,
+          "14": 3,
+          "15": 1,
+          "16": 1,
+          "17": 2,
+          "18": 1,
+          "62": 1,
+          "9": 16
+        },
+        "unique_outputs": 7570
+      },
+      "motif_ceiling_delta": 35,
+      "oracle_k": 10,
+      "primitive_solved_count": 56,
+      "routes": {
+        "cost_route_pass": false,
+        "solve_count_route_pass": true
+      },
+      "seed": 6464,
+      "source": "experiment/data/extracted_subchains/gate3_candidate_menu_diagnostics.json",
+      "thresholds": {
+        "noise_3n": 10.954451150103322,
+        "noise_n": 3.6514837167011076,
+        "solved_delta_threshold": 10.954451150103322
+      }
+    },
+    {
+      "best_k_from_c_solved_count": 87,
+      "c_solved_delta": 21,
+      "capture_ratio": 0.7241379310344828,
+      "condition": "reversed_a1",
+      "cost_reductions": {
+        "best_1_from_c": -0.12895278509303268,
+        "best_k_from_c": 0.010382601586418055,
+        "hidden_motif_oracle": 0.3923862371277484
+      },
+      "endpoint_pass": true,
+      "gate": "Gate 3",
+      "hidden_motif_oracle_solved_count": 95,
+      "interpretation": "strong_menu_cell",
+      "menu": {
+        "candidate_count": 50,
+        "candidate_pool_fraction_of_reached_unique_outputs": 0.9992073976221929,
+        "frontier_candidate_pool_count": 7564,
+        "hit_budget": true,
+        "op_count_3_count": 10,
+        "op_count_4_count": 0,
+        "raw_frontier_candidate_pool_count": 7564,
+        "recipe": "frontier_promotion",
+        "size_distribution": {
+          "1": 14,
+          "2": 26,
+          "3": 10
+        },
+        "support_distribution": {
+          "10": 13,
+          "11": 7,
+          "12": 4,
+          "13": 1,
+          "14": 3,
+          "15": 1,
+          "16": 1,
+          "17": 2,
+          "18": 1,
+          "62": 1,
+          "9": 16
+        },
+        "unique_outputs": 7570
+      },
+      "motif_ceiling_delta": 29,
+      "oracle_k": 10,
+      "primitive_solved_count": 66,
+      "routes": {
+        "cost_route_pass": false,
+        "solve_count_route_pass": true
+      },
+      "seed": 6464,
+      "source": "experiment/data/extracted_subchains/gate3_candidate_menu_diagnostics.json",
+      "thresholds": {
+        "noise_3n": 10.781929326423912,
+        "noise_n": 3.593976442141304,
+        "solved_delta_threshold": 10.781929326423912
+      }
+    }
+  ],
+  "gate_instrument": {
+    "condition_rows": {
+      "reversed_a0": {
+        "gate3_assumed_cell_count": 2,
+        "mean_c_solved_delta": 9.666666666666666,
+        "mean_frozen_threshold": 10.908518708866204,
+        "normal_approx_single_cell_pass_probability": 0.42982996801757145,
+        "observed_deltas": [
+          9,
+          3,
+          17
+        ],
+        "observed_endpoint_pass_rate": 0.3333333333333333,
+        "sample_count": 3,
+        "sample_stddev_c_solved_delta": 7.023769168568493
+      },
+      "reversed_a1": {
+        "gate3_assumed_cell_count": 2,
+        "mean_c_solved_delta": 16.333333333333332,
+        "mean_frozen_threshold": 11.697202637105503,
+        "normal_approx_single_cell_pass_probability": 0.8480575240715418,
+        "observed_deltas": [
+          16,
+          12,
+          21
+        ],
+        "observed_endpoint_pass_rate": 1.0,
+        "sample_count": 3,
+        "sample_stddev_c_solved_delta": 4.509249752822894
+      }
+    },
+    "estimated_all_cells_false_failure_risk": 0.8671247770490468,
+    "estimated_all_cells_pass_probability": 0.13287522295095322,
+    "method": "normal approximation from spent Gate 2 + Gate 3 per-endpoint C solved deltas",
+    "observed_failed_cells": [
+      {
+        "c_solved_delta": 9,
+        "capture_ratio": 0.6,
+        "condition": "reversed_a0",
+        "gate": "Gate 2",
+        "interpretation": "near_miss_threshold_artifact",
+        "motif_ceiling_delta": 15,
+        "seed": 6460
+      },
+      {
+        "c_solved_delta": 3,
+        "capture_ratio": 0.09375,
+        "condition": "reversed_a0",
+        "gate": "Gate 3",
+        "interpretation": "missed_available_structure",
+        "motif_ceiling_delta": 32,
+        "seed": 6463
+      }
+    ],
+    "warning": "Small-sample diagnostic only. This can justify a better survey instrument, but it does not rescue Gate 3 or create a new pass/fail."
+  },
+  "inputs": {
+    "fresh_splits_read": false,
+    "gate2": "experiment/data/extracted_subchains/candidate_menu_diagnostics.json",
+    "gate3": "experiment/data/extracted_subchains/gate3_candidate_menu_diagnostics.json"
+  },
+  "interpretation_rules": {
+    "conjunctive_rule_artifact": "if most cells are strong but the all-cells gate fails, the binary minimum-over-cells rule is the likely instrument problem",
+    "low_available_headroom": "motif-ceiling solved delta is below the frozen solved-delta threshold",
+    "missed_available_structure": "motif ceiling is healthy but C captures less than 25% of that delta"
+  },
+  "proposed_fresh_survey_registration": {
+    "candidate_cap": 50,
+    "conditions": [
+      "reversed_a0",
+      "reversed_a1"
+    ],
+    "criterion": {
+      "low_headroom_cells": "cells with motif-ceiling delta below the frozen noise threshold are marked low-headroom, not menu failures",
+      "max_fraction_cells_below_capture_ratio_0_25": 0.25,
+      "median_capture_ratio_per_endpoint_at_least": 0.5
+    },
+    "fresh_seeds": [
+      6465,
+      6466,
+      6467,
+      6468,
+      6469,
+      6470,
+      6471,
+      6472
+    ],
+    "frozen": {
+      "cap": true,
+      "k": true,
+      "recipe": true,
+      "solver_budget": true,
+      "thresholds": true
+    },
+    "metrics": [
+      "capture_ratio",
+      "motif_headroom"
+    ],
+    "oracle_k": 10,
+    "recipe": "frontier_promotion",
+    "status": "proposed_only_requires_separate_user_approval"
+  },
+  "summary": {
+    "cell_count": 6,
+    "failed_cell_count": 2,
+    "low_headroom_cell_count": 0,
+    "missed_structure_cell_count": 1,
+    "near_miss_threshold_artifact_cell_count": 1,
+    "strong_menu_cell_count": 4
+  }
+}
