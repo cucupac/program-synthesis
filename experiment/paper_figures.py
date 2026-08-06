@@ -439,7 +439,7 @@ def plot_study1_secondary(summary: dict) -> Figure:
     similarity.set_xlim(-2.5, 5.2)
     similarity.set_xticks([-2, 0, 2, 4])
     similarity.set_xlabel("Difference in test problems solved")
-    _graph_title(similarity, "Utility Advantage by Similarity", fontsize=7.5)
+    _graph_title(similarity, "Utility Advantage by Problem-Set Similarity", fontsize=7.5)
     _clean_axis(similarity)
     similarity.grid(False)
     similarity.grid(axis="x", color=GRID_GRAY, linewidth=0.65)

@@ -176,7 +176,7 @@ class PaperFigureTests(unittest.TestCase):
         self.addCleanup(plt.close, figure)
         self.assert_paper_figure_contract(figure)
         text = figure_text(figure)
-        self.assertIn("advantage by similarity", text)
+        self.assertIn("advantage by problem-set similarity", text)
         self.assertIn("starter-solution compression", text)
         self.assertIn("different", text)
         self.assertIn("validation utility", text)
@@ -184,7 +184,7 @@ class PaperFigureTests(unittest.TestCase):
         self.assertEqual(
             [axis.get_title(loc="left") for axis in figure.axes],
             [
-                "Utility Advantage by Similarity",
+                "Utility Advantage by Problem-Set Similarity",
                 "Starter-Solution Compression",
             ],
         )
