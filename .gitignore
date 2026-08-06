@@ -1,4 +1,5 @@
 .DS_Store
+.shellbrain/
 .venv/
 venv/
 __pycache__/
