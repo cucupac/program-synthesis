@@ -1,8 +1,10 @@
 # Abstraction Selection in Bounded Program Synthesis
 
-This repository contains the code and generated data for the experiments in
+This repository contains the paper, code, and generated data for the experiments in
 *On the Value of Abstractions: Abstraction Selection in Bounded Program
 Synthesis*.
+
+[Read the paper (PDF)](paper/abstraction_selection_in_bounded_program_synthesis.pdf).
 
 ## Abstract
 
@@ -32,6 +34,7 @@ abstraction value depended on selection method, library size, and search budget.
 
 ## Contents
 
+- `paper/`: current manuscript, compiled PDF, and LaTeX dependencies
 - `experiment/`: implementation and command-line entry points
 - `experiment/tests/`: automated tests
 - `experiment/data/`: generated problems, registrations, and result data
