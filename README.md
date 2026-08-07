@@ -4,7 +4,7 @@ This repository contains the paper, code, and generated data for the experiments
 *On the Value of Abstractions: Abstraction Selection in Bounded Program
 Synthesis*.
 
-[Read the paper (PDF)](paper/abstraction_selection_in_bounded_program_synthesis.pdf).
+[Read the paper (PDF)](paper/on-the-value-of-abstractions.pdf).
 
 ## Abstract
 

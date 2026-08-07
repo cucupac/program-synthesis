@@ -6,5 +6,5 @@ Compile the paper from this directory:
 
 ```sh
 latexmk -pdf -interaction=nonstopmode -halt-on-error \
-  abstraction_selection_in_bounded_program_synthesis.tex
+  on-the-value-of-abstractions.tex
 ```
