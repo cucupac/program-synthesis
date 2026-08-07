@@ -60,8 +60,9 @@
 
 \keywords{abstraction selection, bounded program synthesis, library learning, search utility}
 
-\summary{Reusable abstractions can shorten programs. Some do not improve
-bounded search. We compare two selection procedures on a synthetic grid benchmark.
+\summary{Reusable abstractions can shorten programs in program synthesis. Some
+do not improve bounded search. We compare two selection procedures on a
+synthetic grid benchmark.
 With ten abstractions, both procedures solved more problems than primitive-only
 search. Utility solved 4.08 more test problems per 100 than
 compression on acquired validation solutions (95 percent CI 2.46 to 5.71).
@@ -100,12 +101,12 @@ the decrease.
 \maketitle
 
 \begin{abstract}
-Reusable abstractions can make program synthesis more efficient by replacing
-several operations with one library item. However, each item also expands the
-solver's search space. With a fixed budget, this added search can prevent the
-solver from reaching a shorter solution. We ask when abstraction libraries
-improve bounded synthesis and what determines their value. The answer matters
-because future savings must justify selection and added search costs.
+Reusable abstractions can shorten programs in program synthesis. However, each
+item also expands the solver's search space. With a fixed budget, this added
+search can prevent the solver from reaching a shorter solution. We ask when
+abstraction libraries improve bounded synthesis and what determines their
+value. The answer matters because future savings must justify selection and
+added search costs.
 To test this question, we compare two abstraction-selection procedures in
 Pattern Builder, a synthetic grid benchmark with deterministic, size-ordered
 search. Across 30 random problem worlds, both procedures select from the same

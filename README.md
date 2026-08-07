@@ -8,9 +8,9 @@ Synthesis*.
 
 ## Abstract
 
-Reusable abstractions can shorten programs. However, some do not improve
-bounded search, so we compare two selection procedures on a synthetic grid
-benchmark. Compression selects the abstractions that shorten known solutions
+Reusable abstractions can shorten programs in program synthesis. However, some
+do not improve bounded search, so we compare two selection procedures on a
+synthetic grid benchmark. Compression selects the abstractions that shorten known solutions
 most. Validation Search Utility instead selects the abstractions that most
 decrease capped search cost on separate validation targets. Both procedures use
 the same starter-derived candidate set, and we evaluate their libraries on
