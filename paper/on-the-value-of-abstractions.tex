@@ -128,7 +128,7 @@ compression-based selection used solutions acquired from the same validation
 problems. The difference includes the selection criterion and which validation
 problems produced solutions. Validation Search Utility still showed an
 advantage over compression-based selection using solutions from 100 starter
-problems. The observed advantage was statistically uncertain.
+problems, but the observed advantage was statistically uncertain.
 At 30,000 attempts, mean performance peaked near 11 abstractions and fell below
 the original DSL at 20. For both procedures, performance also decreased when
 the library grew from one selected abstraction to two. To test whether the
@@ -201,12 +201,14 @@ the solver reaches a larger program where the abstraction helps. Therefore,
   \text{less search on unseen problems}.
 \]
 Compression selects abstractions that remove the most operations from known
-solutions. It measures the shortcut benefit. Its score excludes the extra search
-that the larger library creates. Validation search utility selects abstractions by their
-effect on bounded search for separate validation targets. All procedures use
-the same candidate menu, which comes from starter problems. Validation data can
-change which candidates are selected, but cannot add candidates. Test data only
-evaluate the selected libraries on unseen targets.
+solutions. It measures the size of the shortcut each abstraction creates by
+making those solutions expressible with fewer operations. Its score excludes
+the extra search that the larger library creates. Validation search utility
+selects abstractions by their effect on bounded search for separate validation
+targets. All procedures use the same candidate menu. It contains composite
+programs that can help solve at least two starter problems. Validation data can
+change which candidates are selected, but cannot add candidates. Test data
+only evaluate the selected libraries on unseen targets.
 Both validation procedures use the same 25 problems. Utility scores all search
 outcomes, including failures. Validation-solution compression scores acquired
 solution programs and omits unsolved problems. Thus, the procedures use
