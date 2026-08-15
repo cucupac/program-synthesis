@@ -63,19 +63,19 @@ def build_study1_summary(results: dict) -> dict:
         ("primitives", "Primitives only", "primitives_only", "primitive"),
         (
             "matched_validation_compression",
-            "Compression on validation solutions",
+            "Validation-solution compression",
             "compression_on_validation_assisted",
             "matched",
         ),
         (
             "standard_compression",
-            "Compression on starter solutions",
+            "Standard compression",
             "compression_on_all_100_starter",
             "standard",
         ),
         (
             "validation_utility",
-            "Validation search utility",
+            "Validation Search Utility",
             "utility_on_validation",
             "utility",
         ),
@@ -93,7 +93,7 @@ def build_study1_summary(results: dict) -> dict:
     contrast_specs = (
         (
             "utility_minus_matched",
-            "Validation utility -\nvalidation-solution compression",
+            "Validation Search Utility -\nvalidation-solution compression",
             "Registered primary",
             lambda cell: _solved(cell, "utility_on_validation")
             - _solved(cell, "compression_on_validation_assisted"),
@@ -101,7 +101,7 @@ def build_study1_summary(results: dict) -> dict:
         ),
         (
             "validation_minus_starter_compression",
-            "Validation-solution compression -\ncompression on 25-problem starter subset",
+            "Validation-solution compression -\nstarter-solution compression (25)",
             "Registered primary",
             lambda cell: _solved(cell, "compression_on_validation_assisted")
             - _solved(cell, "compression_on_matched_25_starter"),
@@ -109,7 +109,7 @@ def build_study1_summary(results: dict) -> dict:
         ),
         (
             "utility_minus_standard",
-            "Validation utility -\nstandard compression",
+            "Validation Search Utility -\nstandard compression",
             "Secondary",
             lambda cell: _solved(cell, "utility_on_validation")
             - _solved(cell, "compression_on_all_100_starter"),
@@ -147,19 +147,19 @@ def build_study1_secondary_summary(results: dict) -> dict:
     starter = tradeoff["rows"][0]
     compression = [
         {
-            "label": "Compression\non 25 starter problems",
+            "label": "Starter-solution compression\non 25 starter problems",
             "estimate": starter["compression"]["mean"],
             "interval": starter["compression"]["ci"],
             "style": "standard",
         },
         {
-            "label": "Utility\non same 25 starter problems",
+            "label": "Validation Search Utility\non same 25 starter problems",
             "estimate": starter["utility"]["mean"],
             "interval": starter["utility"]["ci"],
             "style": "utility",
         },
         {
-            "label": "Validation utility\non 25 validation problems",
+            "label": "Validation Search Utility\non 25 validation problems",
             "estimate": tradeoff["validation_utility_on_starter"]["mean"],
             "interval": tradeoff["validation_utility_on_starter"]["ci"],
             "style": "utility",
@@ -192,7 +192,7 @@ def build_study1_cost_summary(results: dict) -> dict:
     return {
         "upfront": [
             {
-                "label": "Validation utility",
+                "label": "Validation Search Utility",
                 "candidate_programs": median(utility_costs),
                 "style": "utility",
             },
@@ -273,7 +273,7 @@ def plot_study1_selection(summary: dict) -> Figure:
         2,
         figsize=FIGURE_SIZE,
         constrained_layout=True,
-        gridspec_kw={"width_ratios": [1.0, 1.0]},
+        gridspec_kw={"width_ratios": [0.9, 1.1]},
     )
 
     performance = axes[0]
@@ -281,9 +281,9 @@ def plot_study1_selection(summary: dict) -> Figure:
     positions = list(range(len(rows)))
     category_labels = (
         "Primitives\nonly",
-        "Compression\non validation\nsolutions",
-        "Compression\non starter\nsolutions",
-        "Validation\nsearch utility",
+        "Validation-\nsolution\ncompression",
+        "Standard\ncompression",
+        "Validation\nSearch Utility",
     )
     for x, row in zip(positions, rows):
         style = _style_for(row["style"])
@@ -312,7 +312,7 @@ def plot_study1_selection(summary: dict) -> Figure:
     performance.set_ylabel("Test problems solved (of 100)")
     _graph_title(performance, "Held-Out Performance")
     _clean_axis(performance)
-    performance.tick_params(axis="x", length=0, pad=5)
+    performance.tick_params(axis="x", length=0, pad=5, labelsize=6.0)
 
     contrasts = axes[1]
     contrasts.axvline(0, color=LIGHT_GRAY, linewidth=1.0, zorder=1)
@@ -320,13 +320,13 @@ def plot_study1_selection(summary: dict) -> Figure:
     contrast_positions = [2.35, 1.35, 0.35]
     contrast_labels = {
         "utility_minus_matched": (
-            "Validation utility - compression on validation solutions"
+            "Validation Search Utility - validation-solution compression"
         ),
         "validation_minus_starter_compression": (
-            "Compression: validation solutions - 25-problem starter subset"
+            "Validation-solution compression - starter-solution compression (25)"
         ),
         "utility_minus_standard": (
-            "Validation utility - compression on starter solutions"
+            "Validation Search Utility - standard compression"
         ),
     }
     label_transform = contrasts.get_yaxis_transform()
@@ -439,7 +439,11 @@ def plot_study1_secondary(summary: dict) -> Figure:
     similarity.set_xlim(-2.5, 5.2)
     similarity.set_xticks([-2, 0, 2, 4])
     similarity.set_xlabel("Difference in test problems solved")
-    _graph_title(similarity, "Utility Advantage by Problem-Set Similarity", fontsize=7.5)
+    _graph_title(
+        similarity,
+        "Validation Search Utility Advantage\nby Problem-Set Similarity",
+        fontsize=7.0,
+    )
     _clean_axis(similarity)
     similarity.grid(False)
     similarity.grid(axis="x", color=GRID_GRAY, linewidth=0.65)
@@ -609,7 +613,7 @@ def plot_study2_capacity(
     )
     for key, label, color, marker in (
         ("past_compression_gain", "Standard compression", CHARCOAL, "s"),
-        ("utility_gain", "Validation utility", BLUE, "o"),
+        ("utility_gain", "Validation Search Utility", BLUE, "o"),
     ):
         rows = capacity["curves"][key]
         estimates = [primitive + rows[k]["estimate"] for k in ks]
@@ -701,7 +705,7 @@ def plot_study3_budget(summary: dict, axes=None) -> Figure:
     effects.axhline(0, color=LIGHT_GRAY, linewidth=1.0)
     for key, label, color, marker in (
         ("past_compression", "Standard compression", CHARCOAL, "s"),
-        ("future_utility", "Validation utility", BLUE, "o"),
+        ("future_utility", "Validation Search Utility", BLUE, "o"),
     ):
         row = summary["methods"][key]
         effects.plot(
@@ -735,7 +739,7 @@ def plot_study3_budget(summary: dict, axes=None) -> Figure:
     )
     for key, label, color, marker in (
         ("past_compression", "Standard compression", CHARCOAL, "s"),
-        ("future_utility", "Validation utility", BLUE, "o"),
+        ("future_utility", "Validation Search Utility", BLUE, "o"),
     ):
         recovered = summary["methods"][key]["recovered_pct"]
         mechanism.plot(

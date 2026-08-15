@@ -46,7 +46,14 @@ EXPECTED_FILES = {
     "study_2_3_capacity_budget.pdf",
     "study_2_3_capacity_budget.png",
 }
-FORBIDDEN_LABELS = ("past compression", "future utility", "subchains")
+FORBIDDEN_LABELS = (
+    "past compression",
+    "future utility",
+    "subchains",
+    "validation utility",
+    "compression on validation solutions",
+    "compression on starter solutions",
+)
 
 
 def figure_text(figure) -> str:
@@ -135,15 +142,15 @@ class PaperFigureTests(unittest.TestCase):
         text = figure_text(figure)
         self.assertIn("registered primary", text)
         self.assertIn("secondary", text)
-        self.assertIn("validation utility", text)
-        self.assertIn("compression on validation solutions", text)
+        self.assertIn("validation search utility", text)
+        self.assertIn("validation-solution compression", text)
         self.assertEqual(
             [label.get_text() for label in performance.get_xticklabels()],
             [
                 "Primitives\nonly",
-                "Compression\non validation\nsolutions",
-                "Compression\non starter\nsolutions",
-                "Validation\nsearch utility",
+                "Validation-\nsolution\ncompression",
+                "Standard\ncompression",
+                "Validation\nSearch Utility",
             ],
         )
         self.assertEqual(
@@ -179,12 +186,12 @@ class PaperFigureTests(unittest.TestCase):
         self.assertIn("advantage by problem-set similarity", text)
         self.assertIn("starter-solution compression", text)
         self.assertIn("different", text)
-        self.assertIn("validation utility", text)
+        self.assertIn("validation search utility", text)
         self.assertIn("operations removed", text)
         self.assertEqual(
             [axis.get_title(loc="left") for axis in figure.axes],
             [
-                "Utility Advantage by Problem-Set Similarity",
+                "Validation Search Utility Advantage\nby Problem-Set Similarity",
                 "Starter-Solution Compression",
             ],
         )
@@ -272,11 +279,12 @@ class PaperFigureTests(unittest.TestCase):
         self.assertEqual(performance.get_legend()._loc, 3)
         self.assertEqual(
             [text.get_text() for text in performance.get_legend().get_texts()],
-            ["Standard compression", "Validation utility"],
+            ["Standard compression", "Validation Search Utility"],
         )
         self.assertFalse(
             any(
-                text.get_text() in {"Standard compression", "Validation utility"}
+                text.get_text()
+                in {"Standard compression", "Validation Search Utility"}
                 for text in performance.texts
             )
         )
@@ -311,14 +319,14 @@ class PaperFigureTests(unittest.TestCase):
         effects, mechanism = figure.axes
         self.assertEqual(
             [text.get_text() for text in effects.get_legend().get_texts()],
-            ["Standard compression", "Validation utility"],
+            ["Standard compression", "Validation Search Utility"],
         )
         self.assertEqual(
             [text.get_text() for text in mechanism.get_legend().get_texts()],
             [
                 "Size-four access",
                 "Recovered losses: Standard compression",
-                "Recovered losses: Validation utility",
+                "Recovered losses: Validation Search Utility",
             ],
         )
         self.assertFalse(effects.texts)
