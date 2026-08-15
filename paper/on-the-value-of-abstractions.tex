@@ -287,7 +287,7 @@ Table~\ref{tab:selection-procedures} defines the four selection procedures.
     \noalign{\vskip 0.25em}
     \mbox{$S_{100}$} & Standard compression & 100 starter & Acquire solutions; 30,000 attempts per problem & Remaining operations in acquired solutions \\
     \mbox{$S_{25}$} & Starter-subset compression & 25 starter & Acquire solutions; 30,000 attempts per problem & Remaining operations in acquired solutions \\
-    \mbox{$M$} & Validation-solution compression & 25 validation & Acquire solutions; 90,000 attempts per problem & Remaining operations in acquired solutions \\
+    \mbox{$M$} & Validation-solution compression & 25 validation & Acquire more solutions; 90,000 attempts per problem & Remaining operations in acquired solutions \\
     \mbox{$U$} & Validation utility & 25 validation & Score each trial library; 30,000 attempts & Mean capped search cost for all 25 targets \\
     \hline
   \end{tabular*}
@@ -454,16 +454,16 @@ test set.
 
 \subsection{Experiments}
 
-Let $m$ identify a selection method, $i\in\{1,\ldots,30\}$ a seed, and
+Let $q$ identify a selection procedure, $i\in\{1,\ldots,30\}$ a seed, and
 $c\in\{1,\ldots,6\}$ a problem-set similarity condition. Outcome
-$Y_{ic}^{m}(K,B)$ is the number of test problems that method $m$ solves with
+$Y_{ic}^{q}(K,B)$ is the number of test problems that procedure $q$ solves with
 budget $B$ and its first $K$ abstractions. Thus,
-$Y_{ic}^{m}(K,B)\in\{0,\ldots,100\}$. The seed mean and
+$Y_{ic}^{q}(K,B)\in\{0,\ldots,100\}$. The seed mean and
 experiment mean are
 \begin{equation}
-  \bar Y_i^{m}(K,B)=\frac{1}{6}\sum_{c=1}^{6}Y_{ic}^{m}(K,B),
+  \bar Y_i^{q}(K,B)=\frac{1}{6}\sum_{c=1}^{6}Y_{ic}^{q}(K,B),
   \qquad
-  \widehat\mu^{m}(K,B)=\frac{1}{30}\sum_{i=1}^{30}\bar Y_i^{m}(K,B).
+  \widehat\mu^{q}(K,B)=\frac{1}{30}\sum_{i=1}^{30}\bar Y_i^{q}(K,B).
 \end{equation}
 Each seed gives six related outcomes. We average them into one seed score, then
 average the 30 scores. Because each seed has six conditions, the experiment
@@ -483,7 +483,7 @@ targets for all procedures.
 Table~\ref{tab:selection-procedures} defines $U$, $M$, $S_{25}$, and $S_{100}$.
 Standard compression, $S_{100}$, is the practical comparator. Post hoc, utility
 also scored the same 25 starter problems as $S_{25}$. Using the experiment mean
-$\widehat\mu^{m}(K,B)$ defined above, the registered contrasts are
+$\widehat\mu^{q}(K,B)$ defined above, the registered contrasts are
 \begin{equation}
   \begin{aligned}
     C_{U-M}
@@ -498,25 +498,26 @@ A positive value favors the first procedure in each subscript. Contrast
 $C_{U-M}$ compares the complete validation procedures. Contrast $C_{M-S_{25}}$
 compares two complete compression procedures. They differ in scoring-problem
 source and acquisition budget.
-Let $W_m$ count the candidate-program attempts used to select procedure $m$'s
-library. Utility scores 455 trial libraries with at most 30,000 attempts each.
+Let $W_q$ count, within one seed-condition cell, the candidate-program attempts
+used to select procedure $q$'s library. Utility scores
+$455=50+49+\cdots+41$ trial libraries with at most 30,000 attempts each.
 The work $W_M$ includes validation-solution acquisition. The work $W_{S_{100}}$
 treats prior starter-solution acquisition as a sunk cost. These counts exclude
 compression segmentation.
-Let $\bar N_m$ be the mean capped cost across the 100 held-out test problems.
-For comparator $m\in\{M,S_{100}\}$, $n_{\mathrm{pay}}(m)$ is the number of
+Let $\bar N_q$ be the mean capped cost across that cell's 100 held-out test
+problems. For comparator $q\in\{M,S_{100}\}$, $n_{\mathrm{pay}}(q)$ is the number of
 future problems needed to recover utility's additional selection work:
 \begin{equation}
-  n_{\mathrm{pay}}(m)
+  n_{\mathrm{pay}}(q)
   =
   \begin{cases}
     \left\lceil
-      \dfrac{\max(0,W_U-W_m)}
-            {\bar N_m-\bar N_U}
+      \dfrac{\max(0,W_U-W_q)}
+            {\bar N_q-\bar N_U}
     \right\rceil,
-      & \text{if } \bar N_m>\bar N_U,\\
+      & \text{if } \bar N_q>\bar N_U,\\
     \infty,
-      & \text{if } \bar N_m\leq\bar N_U.
+      & \text{if } \bar N_q\leq\bar N_U.
   \end{cases}
 \end{equation}
 This post hoc calculation assumes constant mean savings and uses only program
@@ -534,11 +535,11 @@ compression, validation-solution compression, and utility each selected one
 ordered sequence of 20 abstractions. We evaluated every prefix from $K=0$ to
 $K=20$ with $B=30{,}000$. The value $K=0$ is the primitive-only library.
 Selection ran once for each sequence.
-For methods $m$ and $m'$, set $B=30{,}000$. Their performance difference at
+For procedures $q$ and $q'$, set $B=30{,}000$. Their performance difference at
 library size $K$ is
 \begin{equation}
-  D_{m,m'}(K)
-    =\widehat\mu^{m}(K,B)-\widehat\mu^{m'}(K,B).
+  D_{q,q'}(K)
+    =\widehat\mu^{q}(K,B)-\widehat\mu^{q'}(K,B).
 \end{equation}
 The registered method contrasts were $D_{U,M}(20)$,
 $D_{U,S_{100}}(20)$, and the change in $D_{U,M}$ from $K=10$ to $K=20$.
@@ -549,19 +550,19 @@ Observed peaks and the one-to-two drop were descriptive.
 \paragraph{Experiment III: Search Budget.}
 Experiment III reused Experiment II's exact $K=1$ and $K=2$ libraries. It varied
 only $B\in\{30{,}000,45{,}000,60{,}000,90{,}000\}$. Worlds, targets,
-abstraction order, size limit, and enumeration order remained fixed. Here, $m$
+abstraction order, size limit, and enumeration order remained fixed. Here, $q$
 identifies the fixed library selected in Experiment II. Selection did not run
-again. For $m\in\{S_{100},U\}$, the effect of the second abstraction is
-$\Delta_m(B)$. The budget interaction is $I_m$:
+again. For $q\in\{S_{100},U\}$, the effect of the second abstraction is
+$\Delta_q(B)$. The budget interaction is $I_q$:
 \begin{equation}
   \begin{aligned}
-    \Delta_m(B)
-      &=\widehat\mu^m(2,B)-\widehat\mu^m(1,B),\\
-    I_m
-      &=\Delta_m(90{,}000)-\Delta_m(30{,}000).
+    \Delta_q(B)
+      &=\widehat\mu^q(2,B)-\widehat\mu^q(1,B),\\
+    I_q
+      &=\Delta_q(90{,}000)-\Delta_q(30{,}000).
   \end{aligned}
 \end{equation}
-A positive $I_m$ means that increasing the search budget raises the $K=2$ minus
+A positive $I_q$ means that increasing the search budget raises the $K=2$ minus
 $K=1$ performance difference. We calibrated the budgets on ten previously
 analyzed sensitivity seeds before we inspected above-30,000 outcomes for the
 Experiment II seeds.
@@ -619,8 +620,9 @@ Validation-solution compression solved 61.00, and standard compression solved
 \end{figure}
 Library selection has an initial search cost. A more expensive selection method
 is useful only if later search savings recover that initial cost. Utility has a
-higher initial search cost than compression because it runs the solver on every
-validation target for each trial library. Selected abstractions can later save
+higher initial search cost than compression because it performs one bounded
+search for each trial library and scores all 25 validation targets from its
+output record. Selected abstractions can later save
 search because the solver can reuse stored grids instead of rebuilding them
 from primitive operations. We therefore estimate how many future problems are
 needed for these savings to recover Utility's higher initial search cost. We
