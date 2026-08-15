@@ -103,14 +103,15 @@ the decrease.
 
 \begin{abstract}
 Reusable abstractions can shorten programs in program synthesis. However, each
-item also expands a solver's search space. With a fixed budget, this added
-search can prevent the solver from reaching a shorter solution. We ask when
+added abstraction also expands a solver's search space. With a fixed budget,
+this added search can prevent the solver from reaching a shorter solution. We ask when
 adding reusable abstractions improves bounded synthesis and what determines
 their value. The answer matters because future savings must justify selection
 and added search costs.
 To study this question, we compare two abstraction-selection procedures in
-Pattern Builder, a synthetic grid benchmark. The benchmark uses deterministic,
-size-ordered search. Across 30 random problem worlds, both procedures choose
+Pattern Builder, a synthetic grid benchmark. The benchmark uses deterministic
+search that enumerates programs in order of increasing size. Across 30 random
+problem worlds, both procedures choose
 from the same set of 50 abstraction candidates. These candidates are composite
 programs found while solving starter problems, and a selected candidate becomes
 a reusable item available to the solver. A procedure we call validation-solution
@@ -348,8 +349,9 @@ that the solver can try. The deterministic bottom-up solver tries programs in
 order of increasing size. It stops after $B$ attempts or after it has tried all
 programs with seven or fewer operator applications. The solver keeps the first
 program for each distinct output grid. The implementation fixes the order of
-operators, child-program sizes, and commutative arguments. Each complete program
-counts as one attempt, including a duplicate that the solver later discards.
+operators, child-program sizes, and commutative arguments. Each generated
+program counts as one search attempt. If it produces an output grid that the
+solver has already seen, the solver discards it after counting the attempt.
 For Validation Search Utility scoring and final evaluation, one size-ordered
 search records all outputs for a library and the first attempt that produced
 each target. Compression uses separate target-directed searches
@@ -367,17 +369,41 @@ targets reached among 100 as our primary outcome.
 
 \subsection{The Abstraction Candidate Menu}
 
-An abstraction stores a reached grid as a size-zero library item. For each
-seed, the primitive-only solver tries 30,000 programs and records distinct
-grids through the full budget. We keep nonblank, nonprimitive grids whose first
-program has one to four operations. A grid supports a starter target when one
-invert or reflection produces that target or when one add or subtract with
-another reached grid produces it. We keep grids that
-support at least two starter targets. We rank candidates by decreasing support
-count. We break ties by the attempt at which the solver first reached the grid,
-then by program string. The top 50 form the candidate menu $\mathcal C$, from which
-abstractions are later selected. Abstraction candidate discovery does not use
-validation or test data.
+The experiment compares procedures for modifying the solver's library, so each
+procedure needs a shared set of possible additions. We call each possible
+addition an abstraction candidate and the complete shared set the candidate
+menu $\mathcal C$. Each candidate is a composite program together with the grid
+it produces. If selected, that grid becomes a size-zero library item, allowing
+the solver to use it without rebuilding the composite program from primitives.
+The menu therefore defines the available library modifications, while the
+selection procedures determine which modifications are made.
+
+Because the program space is too large to evaluate every composite program as
+a possible abstraction, we construct a finite menu in two stages. First, the
+primitive-only solver uses the standard 30,000-attempt budget and records the
+first program found for each distinct output grid. We exclude the blank grid
+and the six primitive grids because the library already contains them. We keep
+grids whose first programs have one to four operations, which yields nontrivial
+candidates while limiting the initial pool to small composite programs.
+
+Second, the starter targets identify reached grids with observed potential for
+reuse. We apply the same one-step test to every starter target separately. A
+candidate supports a target if one additional invert or reflection can produce
+that target from the candidate grid, or if one add or subtract involving
+another reached grid can do so. The support count is the number of distinct
+starter targets that satisfy this test. We retain only candidates with a
+support count of at least two. Thus, every retained candidate can help complete
+at least two starter targets through the same one-step rule. Two is the smallest
+count that indicates potential reuse across problems.
+
+We rank the retained candidates by decreasing support count, then break ties by
+the attempt at which the primitive-only solver first reached the grid and by
+program string. The top 50 candidates form $\mathcal C$. This cap keeps repeated
+candidate evaluation tractable, while the fixed ranking and tie rules make menu
+construction deterministic. Construction uses no validation or test problems,
+and every selection procedure within a problem world receives the same fixed
+menu. The next subsection describes how each procedure selects an ordered set
+of abstractions from $\mathcal C$.
 
 \subsection{Selection Procedures}
 
