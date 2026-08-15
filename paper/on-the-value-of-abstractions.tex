@@ -107,7 +107,6 @@ search can prevent the solver from reaching a shorter solution. We ask when
 adding reusable abstractions improves bounded synthesis and what determines
 their value. The answer matters because future savings must justify selection
 and added search costs.
-
 To study this question, we compare two abstraction-selection procedures in
 Pattern Builder, a synthetic grid benchmark. The benchmark uses deterministic,
 size-ordered search. Across 30 random problem worlds, both procedures choose
@@ -127,10 +126,9 @@ Validation Search Utility solved 4.08 more test problems per 100 than
 compression-based selection (95 percent CI 2.46 to 5.71). For this comparison,
 compression-based selection used solutions acquired from the same validation
 problems. The difference includes the selection criterion and which validation
-problems produced solutions. Validation Search Utility's advantage over
-compression-based selection using solutions from 100 starter problems remained
-uncertain.
-
+problems produced solutions. Validation Search Utility still showed an
+advantage over compression-based selection using solutions from 100 starter
+problems. The observed advantage was statistically uncertain.
 At 30,000 attempts, mean performance peaked near 11 abstractions and fell below
 the original DSL at 20. For both procedures, performance also decreased when
 the library grew from one selected abstraction to two. To test whether the
@@ -138,7 +136,6 @@ budget caused this decrease, we held those libraries fixed and increased only
 the budget. The decrease reversed. This result supports a search-cutoff
 explanation. Added abstractions can consume the budget before the solver reaches
 larger programs where they help.
-
 Validation Search Utility also required more search during selection, and some
 cases did not recover that cost. Therefore, solution compression alone does not
 measure an abstraction's value under bounded search. A library should be
@@ -894,6 +891,7 @@ instructions.
 \href{https://github.com/cucupac/program-synthesis}{%
 \mbox{\texttt{github.com/cucupac/program-synthesis}}}.
 
+\newpage
 \bibliography{references_rlj2026}
 \bibliographystyle{rlj}
 
