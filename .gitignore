@@ -22,3 +22,15 @@ experiment/data/selection/budget_intervention/full_selection_experiment_budget_i
 # Local smoke runs
 experiment/data/selection/*_smoke/
 experiment/data/selection/*_smoke.json
+
+# Local working files
+tmp/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
