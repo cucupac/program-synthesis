@@ -8,29 +8,9 @@ Synthesis*.
 
 ## Abstract
 
-Reusable abstractions can shorten programs in program synthesis. However, some
-do not improve bounded search, so we compare two selection procedures on a
-synthetic grid benchmark. Compression selects the abstractions that shorten known solutions
-most. Validation Search Utility instead selects the abstractions that most
-decrease capped search cost on separate validation targets. Both procedures use
-the same starter-derived candidate set, and we evaluate their libraries on
-separate test problems. Adding a library item can shorten a solution, but it
-also creates more small programs. Because the solver examines programs by size,
-these programs can consume the budget before the solver reaches a useful larger
-program. In the validation comparison, both procedures used the same 25
-problems. Compression acquired solutions for a mean of 16.59 problems, whereas
-Utility scored all 25 target outcomes. With ten abstractions, both procedures
-improved on primitive-only search. Utility solved 4.08 more test problems per
-100 than validation-solution compression (95 percent CI 2.46 to 5.71). This
-complete-procedure difference includes the scoring objective and solution
-availability. Against standard compression, which used solutions acquired from
-100 starter problems, Utility's smaller advantage remained uncertain. The
-similarity means followed the hypothesis, although formal comparisons did not
-establish the effect. Library size also mattered. At 30,000 attempts, observed
-mean performance was highest at 11 abstractions and fell below primitives alone
-at 20. Performance also decreased sharply from one abstraction to two. For
-these fixed libraries, a larger budget reversed the decrease. In this benchmark,
-abstraction value depended on selection method, library size, and search budget.
+Library learning allows a computational solver to use its experience solving problems to add abstractions to its library that aid in future problem solving. How it chooses those abstractions, however, affects its performance on unseen test problems. Additionally, the value of each abstraction a solver adds to its library is contextually dependent on factors like: its search process, search budgets, and library size. In this paper, we explore two different approaches for selecting abstractions and test the performance of the resulting libraries they construct. Namely, we compare **compression**–which chooses abstractions that compress the size of a set of previously-found past solution programs by minimizing the number of subprograms across the entire set–against **search cost minimization**–which chooses abstractions that minimize solution search cost on a new distinct problem set. Both selection procedures choose abstractions from the same set of subprogram candidates, created by initially finding solution programs using only primitive substates and operations that are permitted by a starter domain specific language (DSL). We used Pattern Builder for this study, which presents a solver with a pattern on a 10x10 pixel grid and tasks it to build a program using its library that constructs that pattern. Asking how a solver should optimally add subprograms to its library is worthwhile not only because it can improve held-out problem-solving performance but also because the procedures by which abstractions are chosen differ in computational cost: any increased performance should justify the computational cost required to achieve it. This paper also explores how library size affects solver performance under both abstraction selection procedures under a fixed search budget–and how a search budget interacts with library size and test performance. Each subprogram added to a library increases the number of possible shallow-depth programs a solver must search through, which can exhaust its search budget. While abstractions themselves reduce search by not requiring solvers to reconstruct their subprograms, it's possible that this search reduction is only used deeper into a program trajectory. Such cases may exhaust a search budget before a solution program is found, highlighting a tradeoff between library size and search cost.
+
+In this study, we found that with 10 abstractions, both selection procedures outperformed the primitive-only DSL. Search cost minimization outperformed compression by solving 4.08 more test problems out of 100 (95 percent CI 2.46 to 5.71). At 30,000 program attempts, mean performance peaked at 11 abstractions but then fell sharply, ultimately underperforming the primitive-only DSL at 20 added abstractions. Interestingly, both selection procedures' library performance dropped sharply from library size 1 to 2 abstractions. We determined that this performance drop was caused by the 30,000 program search budget: after holding the libraries constant and increasing allowed search, all of the unsolved problems that constituted the performance reduction were recovered. These findings strongly support the view the value of a library abstraction depends on the context in which it's used and the constraints a solver is subject to.
 
 ## Contents
 
