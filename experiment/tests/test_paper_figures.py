@@ -53,6 +53,13 @@ FORBIDDEN_LABELS = (
     "validation utility",
     "compression on validation solutions",
     "compression on starter solutions",
+    "validation search utility",
+    "validation-solution compression",
+    "starter-solution compression",
+    "standard compression",
+    "starter problems",
+    "validation problems",
+    "validation targets",
 )
 
 
@@ -142,15 +149,15 @@ class PaperFigureTests(unittest.TestCase):
         text = figure_text(figure)
         self.assertIn("registered primary", text)
         self.assertIn("secondary", text)
-        self.assertIn("validation search utility", text)
-        self.assertIn("validation-solution compression", text)
+        self.assertIn("search cost minimization", text)
+        self.assertIn("compression on $p_{\\mathrm{scm}}$", text)
         self.assertEqual(
             [label.get_text() for label in performance.get_xticklabels()],
             [
                 "Primitives\nonly",
-                "Validation-\nsolution\ncompression",
-                "Standard\ncompression",
-                "Validation\nSearch Utility",
+                "Compression\non $P_{\\mathrm{SCM}}$",
+                "Compression\non $P_{\\mathrm{prim}}$",
+                "Search cost\nminimization",
             ],
         )
         self.assertEqual(
@@ -184,15 +191,15 @@ class PaperFigureTests(unittest.TestCase):
         self.assert_paper_figure_contract(figure)
         text = figure_text(figure)
         self.assertIn("advantage by problem-set similarity", text)
-        self.assertIn("starter-solution compression", text)
+        self.assertIn("primitive-only solution compression", text)
         self.assertIn("different", text)
-        self.assertIn("validation search utility", text)
+        self.assertIn("search cost minimization", text)
         self.assertIn("operations removed", text)
         self.assertEqual(
             [axis.get_title(loc="left") for axis in figure.axes],
             [
-                "Validation Search Utility Advantage\nby Problem-Set Similarity",
-                "Starter-Solution Compression",
+                "Search Cost Minimization Advantage\nby Problem-Set Similarity",
+                "Primitive-Only Solution Compression",
             ],
         )
         figure.canvas.draw()
@@ -277,21 +284,21 @@ class PaperFigureTests(unittest.TestCase):
         self.assertGreater(capacity_note.get_position()[0], 20)
         self.assertEqual(capacity_note.get_horizontalalignment(), "right")
         self.assertEqual(performance.get_legend()._loc, 3)
+        legend_labels = [
+            "Compression on $P_{\\mathrm{prim}}$",
+            "Search cost minimization",
+        ]
         self.assertEqual(
             [text.get_text() for text in performance.get_legend().get_texts()],
-            ["Standard compression", "Validation Search Utility"],
+            legend_labels,
         )
         self.assertFalse(
-            any(
-                text.get_text()
-                in {"Standard compression", "Validation Search Utility"}
-                for text in performance.texts
-            )
+            any(text.get_text() in set(legend_labels) for text in performance.texts)
         )
         self.assertFalse(compression.texts)
         self.assertEqual(
             [axis.get_title(loc="left") for axis in figure.axes],
-            ["Held-Out Performance", "Starter-Solution Compression"],
+            ["Held-Out Performance", "Primitive-Only Solution Compression"],
         )
 
     def test_study3_data_and_figure_cover_the_budget_intervention(self):
@@ -319,14 +326,17 @@ class PaperFigureTests(unittest.TestCase):
         effects, mechanism = figure.axes
         self.assertEqual(
             [text.get_text() for text in effects.get_legend().get_texts()],
-            ["Standard compression", "Validation Search Utility"],
+            [
+                "Compression on $P_{\\mathrm{prim}}$",
+                "Search cost minimization",
+            ],
         )
         self.assertEqual(
             [text.get_text() for text in mechanism.get_legend().get_texts()],
             [
                 "Size-four access",
-                "Recovered losses: Standard compression",
-                "Recovered losses: Validation Search Utility",
+                "Recovered losses: compression on $P_{\\mathrm{prim}}$",
+                "Recovered losses: search cost minimization",
             ],
         )
         self.assertFalse(effects.texts)
@@ -348,7 +358,7 @@ class PaperFigureTests(unittest.TestCase):
             [axis.get_title(loc="left") for axis in figure.axes],
             [
                 "Held-Out Performance",
-                "Starter-Solution Compression",
+                "Primitive-Only Solution Compression",
                 "Effect of the Second Abstraction",
                 "Search Access and Recovery",
             ],

@@ -63,19 +63,19 @@ def build_study1_summary(results: dict) -> dict:
         ("primitives", "Primitives only", "primitives_only", "primitive"),
         (
             "matched_validation_compression",
-            "Validation-solution compression",
+            "Compression on $P_{\\mathrm{SCM}}$",
             "compression_on_validation_assisted",
             "matched",
         ),
         (
             "standard_compression",
-            "Standard compression",
+            "Compression on $P_{\\mathrm{prim}}$",
             "compression_on_all_100_starter",
             "standard",
         ),
         (
             "validation_utility",
-            "Validation Search Utility",
+            "Search cost minimization",
             "utility_on_validation",
             "utility",
         ),
@@ -93,7 +93,7 @@ def build_study1_summary(results: dict) -> dict:
     contrast_specs = (
         (
             "utility_minus_matched",
-            "Validation Search Utility -\nvalidation-solution compression",
+            "Search cost minimization -\ncompression on $P_{\\mathrm{SCM}}$",
             "Registered primary",
             lambda cell: _solved(cell, "utility_on_validation")
             - _solved(cell, "compression_on_validation_assisted"),
@@ -101,7 +101,7 @@ def build_study1_summary(results: dict) -> dict:
         ),
         (
             "validation_minus_starter_compression",
-            "Validation-solution compression -\nstarter-solution compression (25)",
+            "Compression on $P_{\\mathrm{SCM}}$ -\ncompression on $P_{\\mathrm{prim,25}}$",
             "Registered primary",
             lambda cell: _solved(cell, "compression_on_validation_assisted")
             - _solved(cell, "compression_on_matched_25_starter"),
@@ -109,7 +109,7 @@ def build_study1_summary(results: dict) -> dict:
         ),
         (
             "utility_minus_standard",
-            "Validation Search Utility -\nstandard compression",
+            "Search cost minimization -\ncompression on $P_{\\mathrm{prim}}$",
             "Secondary",
             lambda cell: _solved(cell, "utility_on_validation")
             - _solved(cell, "compression_on_all_100_starter"),
@@ -147,19 +147,19 @@ def build_study1_secondary_summary(results: dict) -> dict:
     starter = tradeoff["rows"][0]
     compression = [
         {
-            "label": "Starter-solution compression\non 25 starter problems",
+            "label": "Compression on $P_{\\mathrm{prim,25}}$\non 25 primitive-only problems",
             "estimate": starter["compression"]["mean"],
             "interval": starter["compression"]["ci"],
             "style": "standard",
         },
         {
-            "label": "Validation Search Utility\non same 25 starter problems",
+            "label": "Search cost minimization\non same 25\nprimitive-only problems",
             "estimate": starter["utility"]["mean"],
             "interval": starter["utility"]["ci"],
             "style": "utility",
         },
         {
-            "label": "Validation Search Utility\non 25 validation problems",
+            "label": "Search cost minimization\non 25 $T_{\\mathrm{SCM}}$ problems",
             "estimate": tradeoff["validation_utility_on_starter"]["mean"],
             "interval": tradeoff["validation_utility_on_starter"]["ci"],
             "style": "utility",
@@ -192,25 +192,25 @@ def build_study1_cost_summary(results: dict) -> dict:
     return {
         "upfront": [
             {
-                "label": "Validation Search Utility",
+                "label": "Search cost\nminimization",
                 "candidate_programs": median(utility_costs),
                 "style": "utility",
             },
             {
-                "label": "Validation-solution\ncompression",
+                "label": "Compression\non $P_{\\mathrm{SCM}}$",
                 "candidate_programs": median(compression_costs),
                 "style": "standard",
             },
         ],
         "payback": [
             {
-                "label": "vs. validation-solution\ncompression",
+                "label": "vs. compression\non $P_{\\mathrm{SCM}}$",
                 "median_future_problems": cost["registered"]["finite_median"],
                 "finite": cost["registered"]["finite"],
                 "no_payback": cost["registered"]["never"],
             },
             {
-                "label": "vs. standard compression",
+                "label": "vs. compression\non $P_{\\mathrm{prim}}$",
                 "median_future_problems": cost["practical"]["finite_median"],
                 "finite": cost["practical"]["finite"],
                 "no_payback": cost["practical"]["never"],
@@ -281,9 +281,9 @@ def plot_study1_selection(summary: dict) -> Figure:
     positions = list(range(len(rows)))
     category_labels = (
         "Primitives\nonly",
-        "Validation-\nsolution\ncompression",
-        "Standard\ncompression",
-        "Validation\nSearch Utility",
+        "Compression\non $P_{\\mathrm{SCM}}$",
+        "Compression\non $P_{\\mathrm{prim}}$",
+        "Search cost\nminimization",
     )
     for x, row in zip(positions, rows):
         style = _style_for(row["style"])
@@ -320,13 +320,14 @@ def plot_study1_selection(summary: dict) -> Figure:
     contrast_positions = [2.35, 1.35, 0.35]
     contrast_labels = {
         "utility_minus_matched": (
-            "Validation Search Utility - validation-solution compression"
+            "Search cost minimization - compression on $P_{\\mathrm{SCM}}$"
         ),
         "validation_minus_starter_compression": (
-            "Validation-solution compression - starter-solution compression (25)"
+            "Compression on $P_{\\mathrm{SCM}}$"
+            " - compression on $P_{\\mathrm{prim,25}}$"
         ),
         "utility_minus_standard": (
-            "Validation Search Utility - standard compression"
+            "Search cost minimization - compression on $P_{\\mathrm{prim}}$"
         ),
     }
     label_transform = contrasts.get_yaxis_transform()
@@ -400,7 +401,7 @@ def plot_study1_secondary(summary: dict) -> Figure:
         2,
         figsize=SECONDARY_FIGURE_SIZE,
         constrained_layout=True,
-        gridspec_kw={"width_ratios": [0.95, 1.05]},
+        gridspec_kw={"width_ratios": [0.85, 1.15]},
     )
 
     similarity = axes[0]
@@ -441,7 +442,7 @@ def plot_study1_secondary(summary: dict) -> Figure:
     similarity.set_xlabel("Difference in test problems solved")
     _graph_title(
         similarity,
-        "Validation Search Utility Advantage\nby Problem-Set Similarity",
+        "Search Cost Minimization Advantage\nby Problem-Set Similarity",
         fontsize=7.0,
     )
     _clean_axis(similarity)
@@ -480,7 +481,7 @@ def plot_study1_secondary(summary: dict) -> Figure:
     compression.set_xlim(0, 33)
     compression.set_xticks([0, 10, 20, 30])
     compression.set_xlabel("Operations removed (%)")
-    _graph_title(compression, "Starter-Solution Compression", fontsize=7.5)
+    _graph_title(compression, "Primitive-Only Solution Compression", fontsize=7.0)
     _clean_axis(compression)
     compression.grid(False)
     compression.grid(axis="x", color=GRID_GRAY, linewidth=0.65)
@@ -612,8 +613,13 @@ def plot_study2_capacity(
         fontsize=6.5,
     )
     for key, label, color, marker in (
-        ("past_compression_gain", "Standard compression", CHARCOAL, "s"),
-        ("utility_gain", "Validation Search Utility", BLUE, "o"),
+        (
+            "past_compression_gain",
+            "Compression on $P_{\\mathrm{prim}}$",
+            CHARCOAL,
+            "s",
+        ),
+        ("utility_gain", "Search cost minimization", BLUE, "o"),
     ):
         rows = capacity["curves"][key]
         estimates = [primitive + rows[k]["estimate"] for k in ks]
@@ -674,8 +680,8 @@ def plot_study2_capacity(
     compression.set_xticks([0, 5, 10, 15, 20])
     compression.set_ylim(bottom=0)
     compression.set_xlabel("Number of added abstractions")
-    compression.set_ylabel("Starter-solution operations removed (%)")
-    _graph_title(compression, "Starter-Solution Compression")
+    compression.set_ylabel("Primitive-only solution\noperations removed (%)")
+    _graph_title(compression, "Primitive-Only Solution Compression")
     _clean_axis(compression)
     return figure
 
@@ -704,8 +710,13 @@ def plot_study3_budget(summary: dict, axes=None) -> Figure:
     effects = axes[0]
     effects.axhline(0, color=LIGHT_GRAY, linewidth=1.0)
     for key, label, color, marker in (
-        ("past_compression", "Standard compression", CHARCOAL, "s"),
-        ("future_utility", "Validation Search Utility", BLUE, "o"),
+        (
+            "past_compression",
+            "Compression on $P_{\\mathrm{prim}}$",
+            CHARCOAL,
+            "s",
+        ),
+        ("future_utility", "Search cost minimization", BLUE, "o"),
     ):
         row = summary["methods"][key]
         effects.plot(
@@ -738,8 +749,13 @@ def plot_study3_budget(summary: dict, axes=None) -> Figure:
         label="Size-four access",
     )
     for key, label, color, marker in (
-        ("past_compression", "Standard compression", CHARCOAL, "s"),
-        ("future_utility", "Validation Search Utility", BLUE, "o"),
+        (
+            "past_compression",
+            "compression on $P_{\\mathrm{prim}}$",
+            CHARCOAL,
+            "s",
+        ),
+        ("future_utility", "search cost minimization", BLUE, "o"),
     ):
         recovered = summary["methods"][key]["recovered_pct"]
         mechanism.plot(
