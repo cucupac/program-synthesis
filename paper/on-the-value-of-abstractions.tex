@@ -114,7 +114,7 @@ the decrease.
 \maketitle
 
 \begin{abstract}
-Library learning allows a computational solver to use its experience solving problems to add abstractions to its library that aid in future problem solving. How it chooses those abstractions, however, affects its performance on unseen test problems. Additionally, the value of each abstraction a solver adds to its library is contextually dependent on factors like: its search process, search budgets, and library size. In this paper, we explore two different approaches for selecting abstractions and test the performance of the resulting libraries they construct. Namely, we compare \textbf{compression}--which chooses abstractions that compress the size of a set of previously-found past solution programs by minimizing the number of subprograms across the entire set--against \textbf{search cost minimization}--which chooses abstractions that minimize solution search cost on a new distinct problem set. Both selection procedures choose abstractions from the same set of subprogram candidates, created by initially finding solution programs using only primitive substates and operations that are permitted by a starter domain specific language (DSL). We used Pattern Builder for this study, which presents a solver with a pattern on a 10x10 pixel grid and tasks it to build a program using its library that constructs that pattern. Asking how a solver should optimally add subprograms to its library is worthwhile not only because it can improve held-out problem-solving performance but also because the procedures by which abstractions are chosen differ in computational cost: any increased performance should justify the computational cost required to achieve it. This paper also explores how library size affects solver performance under both abstraction selection procedures under a fixed search budget--and how a search budget interacts with library size and test performance. Each subprogram added to a library increases the number of possible shallow-depth programs a solver must search through, which can exhaust its search budget. While abstractions themselves reduce search by not requiring solvers to reconstruct their subprograms, it's possible that this search reduction is only used deeper into a program trajectory. Such cases may exhaust a search budget before a solution program is found, highlighting a tradeoff between library size and search cost.
+Library learning allows a computational solver to use its experience solving problems to add abstractions to its library that aid in future problem solving. How it chooses those abstractions, however, affects its performance on unseen test problems. Additionally, the value of each abstraction a solver adds to its library is contextually dependent on factors like: its search process, search budgets, and library size. In this paper, we explore two different approaches for selecting abstractions and test the performance of the resulting libraries they construct. Namely, we compare \textbf{compression}--which chooses abstractions that compress the size of a set of previously-found past solution programs by minimizing the number of subprograms across the entire set--against \textbf{search cost minimization}--which chooses abstractions that minimize solution search cost on a new distinct problem set. Both selection procedures choose abstractions from the same set of 50 subprogram candidates. We construct this set by first collecting the grids reached during search using only primitive substates and operations permitted by a starter domain specific language (DSL), then keeping programs whose output grids show potential for reuse across problems. We used Pattern Builder for this study, which presents a solver with a pattern on a 10x10 pixel grid and tasks it to build a program using its library that constructs that pattern. Asking how a solver should optimally add subprograms to its library is worthwhile not only because it can improve held-out problem-solving performance but also because the procedures by which abstractions are chosen differ in computational cost: any increased performance should justify the computational cost required to achieve it. This paper also explores how library size affects solver performance under both abstraction selection procedures under a fixed search budget--and how a search budget interacts with library size and test performance. Each subprogram added to a library increases the number of possible shallow-depth programs a solver must search through, which can exhaust its search budget. While abstractions themselves reduce search by not requiring solvers to reconstruct their subprograms, it's possible that this search reduction is only used deeper into a program trajectory. Such cases may exhaust a search budget before a solution program is found, highlighting a tradeoff between library size and search cost.
 
 In this study, we found that with 10 abstractions, both selection procedures outperformed the primitive-only DSL. When both abstraction selection methods used the same set of problems, search cost minimization solved 4.08 more test problems out of 100 than compression. At 30,000 program attempts, mean performance peaked at 11 abstractions but then fell sharply, ultimately underperforming the primitive-only DSL at 20 added abstractions. Interestingly, both selection procedures' library performance dropped sharply from library size 1 to 2 abstractions. We determined that this performance drop was caused by the 30,000 program search budget: after holding the libraries constant and increasing allowed search, all of the unsolved problems that constituted the performance reduction were recovered. These findings strongly support the view the value of a library abstraction depends on the context in which it's used and the constraints a solver is subject to.
 \end{abstract}
@@ -225,62 +225,39 @@ solution program set,
   P_{\mathrm{prim}}
   = \{P_{1,\mathrm{prim}},\ldots,P_{n,\mathrm{prim}}\},
 \]
-where each $P_{i,\mathrm{prim}}$ solves its problem $T_i$. This set is the
-solver's empirical experience, and it is the only place we look for
-abstractions: every subprogram found within a primitive-only solution program
-is an \emph{abstraction candidate}. Together, the candidates form the set
-\[
-  A_{\mathrm{candidates}}
-  = \bigcup_{P\in P_{\mathrm{prim}}}\operatorname{subprograms}(P).
-\]
-Figure~\ref{fig:solver-experience} traces this path from problems to solution
-programs to candidates.
+where each $P_{i,\mathrm{prim}}$ solves its problem $T_i$. To construct
+our abstraction candidate set, we first collect the distinct grids reached
+during primitive-only search and the programs that produce them. We then
+look for grids that show potential for reuse across the problems in
+$T_{\mathrm{prim}}$. In other words, we ask whether a grid could help
+construct the target for more than one problem. After filtering and ranking
+these programs, we keep 50 as our \emph{abstraction candidates}, which form
+$A_{\mathrm{candidates}}$. Both selection procedures choose from this same
+set. Figure~\ref{fig:solver-experience} illustrates this process, and
+Section~\ref{sec:abstraction-candidates} describes the filtering and ranking
+procedure.
 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}[conceptfig]
-    \node[setnode,label={[note]above:primitive-only problem set}]
-      (tprim) at (0,0)
-      {$T_{\mathrm{prim}}=\{T_1,T_2,\ldots,T_n\}$};
-    \node[setnode,label={[note]above:primitive-only solution program set}]
-      (pprim) at (8.1,0)
-      {$P_{\mathrm{prim}}
-        =\{P_{1,\mathrm{prim}},\ldots,P_{n,\mathrm{prim}}\}$};
-    \draw[->] (tprim) -- node[midway,above] {primitive-only solver}
-      node[midway,below,note] {$T_i\mapsto P_{i,\mathrm{prim}}$} (pprim);
-
-    \node (zin) at (-1.5,-2.15) {$S_i^{\mathrm{problem}}$};
-    \node[substep] (zda) at (0.05,-2.15) {};
-    \node[substep] (zdb) at (1.25,-2.15) {};
-    \node[substep] (zdc) at (2.45,-2.15) {};
-    \node (zout) at (3.95,-2.15) {$S_i^{\mathrm{solution}}$};
-    \draw[->] (zin) -- (zda);
-    \draw[->] (zda) -- (zdb);
-    \draw[->] (zdb) -- (zdc);
-    \draw[->] (zdc) -- (zout);
-    \draw[decorate,decoration={brace,mirror,amplitude=4pt}]
-      (-2.2,-2.5) -- (4.65,-2.5)
-      node[midway,below=6pt,note,xshift=-1.2cm]
-      {one solution program $P_{i,\mathrm{prim}}$};
-    \node[fragment,fit=(zda)(zdb)] (zfrag) {};
-    \node[note,above=0.1cm of zfrag] {subprogram};
-
-    \node (acand) at (8.1,-3.45)
-      {$A_{\mathrm{candidates}}
-        =\displaystyle\bigcup_{P\in P_{\mathrm{prim}}}
-        \operatorname{subprograms}(P)$};
-    \draw[->] (pprim) -- node[midway,right,note] {produces} (acand);
-    \draw[->,dashed,black!60] (zfrag.south east) to[bend right=18]
-      node[pos=0.62,below=2pt,note,black] {one abstraction candidate}
-      ([xshift=-2pt]acand.west);
+    \node[procnode,text width=2.3cm] (search) at (0,0)
+      {Primitive-only\\search};
+    \node[setnode,text width=3.2cm] (grids) at (5.7,0)
+      {Distinct reached grids\\and their programs};
+    \node[procnode,text width=3.2cm] (filter) at (5.7,-1.9)
+      {Filter for reuse across\\$T_{\mathrm{prim}}$ and rank};
+    \node[setnode,text width=2.3cm] (acand) at (0,-1.9)
+      {50 candidates\\$A_{\mathrm{candidates}}$};
+    \draw[->] (search) -- node[midway,above,note] {collect} (grids);
+    \draw[->] (grids) -- (filter);
+    \draw[->] (filter) -- node[midway,above,note] {keep the top 50} (acand);
   \end{tikzpicture}
-  \caption{From solver experience to abstraction candidates. The
-  primitive-only solver solves each problem $T_i$ in
-  $T_{\mathrm{prim}}$, and the solution programs it finds form
-  $P_{\mathrm{prim}}$, the solver's experience. Every subprogram
-  found within those programs, such as the marked fragment of
-  $P_{i,\mathrm{prim}}$, enters the abstraction candidate set
-  $A_{\mathrm{candidates}}$.}
+  \caption{From primitive-only search to abstraction candidates. We first
+  collect the distinct grids reached during search and the programs that
+  produce them. We then check whether each grid could help construct targets
+  across the primitive-only problems, and use this potential for reuse to
+  filter and rank the programs. The top 50 form the candidate set
+  $A_{\mathrm{candidates}}$ shared by both selection procedures.}
   \label{fig:solver-experience}
 \end{figure}
 
@@ -579,18 +556,13 @@ Unless stated otherwise, $B=30{,}000$. We use the number of held-out test
 targets reached among 100 as our primary outcome.
 
 \subsection{The Abstraction Candidate Set}
+\label{sec:abstraction-candidates}
 
-The introduction builds the abstraction candidate set through the chain
-\[
-  T_{\mathrm{prim}}
-  \xrightarrow{\;\text{primitive-only solver}\;}
-  P_{\mathrm{prim}}
-  \xrightarrow{\;\operatorname{subprograms}(\cdot)\;}
-  A_{\mathrm{candidates}}.
-\]
-The full set of subprograms is too large to score repeatedly, so the
-experiment bounds $A_{\mathrm{candidates}}$ to 50 candidates in two
-stages. Each candidate is a subprogram. If selected, the solver stores the
+To construct $A_{\mathrm{candidates}}$, we first collect grids reached
+during primitive-only search, then filter the programs that produce them
+based on their potential for reuse. The procedure below describes these two
+stages and how we rank the remaining programs to choose 50 candidates.
+Each candidate is a subprogram. If selected, the solver stores the
 candidate's output grid as a size-zero library item and can then use that
 grid without rebuilding the subprogram from primitives. The candidate set
 therefore defines the available library modifications, while the selection
